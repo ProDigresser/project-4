@@ -1,4 +1,4 @@
-from app import db, bcrypy
+from app import db, bcrypt
 from models.base import BaseModel
 from datetime import *
 from models.genre import Genre
