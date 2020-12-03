@@ -15,33 +15,33 @@ with app.app_context():
   admin = User(
     username='Admin',
     email='hello@admin.com',
-    password_hash='hello1',
+    password='hello1',
     profession='Admin'
   )
 
   dec = User(
     username='Dec',
     email='dec@dec.com',
-    password_hash='dec',
+    password='dec',
     profession='Developer'
   )
   
   test_user_one = User(
     username='Laurence',
     email='hello@laurence.com',
-    password_hash='hello1',
+    password='hello1',
     profession='Developer'
   )
 
   sherryll = User (
     username="sherryll",
     email="hello@sherryll.com",
-    password_hash="sherryll"
+    password="sherryll"
   )
   bob = User (
     username="bob",
     email="hello@bob.com",
-    password_hash="bob"
+    password="bob"
   )
   test_user_one.save()
   dec.save()
