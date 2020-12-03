@@ -6,7 +6,7 @@ from functools import wraps
 
 def secure_route(func):
   @wraps(func)
-  def warpper(*args, **kwargs):
+  def wrapper(*args, **kwargs):
 
     raw_token = request.headers['Authorization']
     clean_token = raw_token.replace('Bearer ', '')

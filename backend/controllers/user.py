@@ -23,5 +23,5 @@ def login():
 
   token = user.generate_token()
 
-  return{ 'token': token 'message': 'Welcome back!'}
+  return{ 'token': token, 'message': 'Welcome back!'}
 
