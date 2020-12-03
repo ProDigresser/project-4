@@ -5,7 +5,7 @@ from marshmallow import fields
 
 
 
-class UserSchema(ms.SQLAlchemyAutoSchema, BaseSchema):
+class UserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   
   class Meta:
     model = User

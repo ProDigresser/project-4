@@ -34,7 +34,7 @@ def genres_index():
 # Get a single video
 
 @router.route('/videos/<int:id>', methods=['GET'])
-@secure_roue
+@secure_route
 def get_single_video(id):
   video = Video.query.all(id)
 

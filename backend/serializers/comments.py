@@ -3,6 +3,7 @@ from serializers.base import BaseSchema
 from marshmallow import fields
 from models.video import Video
 from models.genre import Genre
+from models.comments import Comment
 
 class CommentSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   

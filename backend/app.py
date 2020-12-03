@@ -13,10 +13,10 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 bcrypt = Bcrypt(app)
 
-# from controllers import vid_post, user
+from controllers import vid_post, user
 
-# app.register_blueprint(vid_post.router, url_prefix="/api")
-# app.register_blueprint(user.router, url_prefix="/api")
+app.register_blueprint(vid_post.router, url_prefix="/api")
+app.register_blueprint(user.router, url_prefix="/api")
 
 # # ! Hello world flask app to start you off.
 # @app.route('/')
