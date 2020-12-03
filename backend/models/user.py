@@ -1,4 +1,4 @@
-from app import db, bcrypy
+from app import db, bcrypt
 from models.base import BaseModel
 from datetime import *
 from models.genre import Genre
@@ -31,7 +31,7 @@ class User(db.Model, BaseModel):
 
   @password.setter
   def password(self, password_plaintext):
-    self.password_hash = bcrypy.generate_password_hash(password_plaintext).decode('utf-8')
+    self.password_hash = bcrypt.generate_password_hash(password_plaintext).decode('utf-8')
 
   def validate_password(self, password_plaintext):
     return bcrypt.check_password_hash(self.password_hash, password_plaintext)

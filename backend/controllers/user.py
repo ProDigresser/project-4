@@ -21,7 +21,7 @@ def login():
   if not user:
     return { 'message': 'Unauthorized' }, 402
 
-    token = user.generate_token()
+  token = user.generate_token()
 
-    return{ 'token': token 'message': 'Welcome back!'}
+  return{ 'token': token, 'message': 'Welcome back!'}
 

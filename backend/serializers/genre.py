@@ -7,7 +7,8 @@ from models.genre import Genre
 class GenreSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   
   class Meta:
-    model = Genre    load_instance = True
+    model = Genre    
+    load_instance = True
 
 class PopulateGenreSchema(GenreSchema):
 
