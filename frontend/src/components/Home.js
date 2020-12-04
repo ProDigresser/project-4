@@ -4,9 +4,14 @@ import axios from 'axios'
 
 
 const Home = () => {
+
+  //  Variables
+
   const [videos, updateVideos] = useState([])
   const [videoFilter, updateVideoFilter] = useState('Select your Genre')
   const [searchText, updateSearchText] = useState('')
+
+  // Fetches from our backend
 
   useEffect(() => {
     axios.get('/api/videos')
@@ -15,6 +20,8 @@ const Home = () => {
       })
   }, [])
 
+  // Loading screen
+
   if (!videos[1]) {
     return <div>
       <h2>Loading...</h2>
@@ -22,7 +29,7 @@ const Home = () => {
     </div>
   }
 
-  console.log(videos)
+  // Functions
 
   function filterVideos() {
     const filteredVideos = videos.filter(video => {
@@ -40,6 +47,8 @@ const Home = () => {
     const arrayGenres = Array.from(genreList)
     return arrayGenres
   }
+
+  // Content
 
   return <div>
     <div>
