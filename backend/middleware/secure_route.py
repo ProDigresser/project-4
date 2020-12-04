@@ -21,7 +21,7 @@ def secure_route(func):
 
       g.current_user = user
 
-    except jwt.ExpiredSigantureError:
+    except jwt.ExpiredSignatureError:
       return { 'message': 'Expired token. Please log in.' }, 401
 
     except Exception:

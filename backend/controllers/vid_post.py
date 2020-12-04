@@ -34,14 +34,14 @@ def genres_index():
 # Get a single video
 
 @router.route('/videos/<int:id>', methods=['GET'])
-@secure_route
 def get_single_video(id):
-  video = Video.query.all(id)
+  video = Video.query.get(id)
 
   if not video:
     return { 'message': 'Video not available' }, 404
   
   return populate_video.jsonify(video), 200
+
 
 # Add a video
 
@@ -96,14 +96,17 @@ def remove(id):
 # Post a comment
 
 @router.route('/videos/<int:video_id>/comments', methods=['POST'])
+@secure_route
 def comment_create(video_id):
 
   comment_data = request.get_json()
   video = Video.query.get(video_id)
   comment = comment_schema.load(comment_data)
   comment.video = video
+  comment.user_id = g.current_user.id
   comment.save()
   return comment_schema.jsonify(comment)
+
 
 
 
