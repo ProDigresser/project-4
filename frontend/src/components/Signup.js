@@ -1,4 +1,4 @@
-import React, { usestate } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 const Signup = (props) => {
