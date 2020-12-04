@@ -21,8 +21,9 @@ const Login = (props) => {
     axios.post('/api/login', formData)
       .then(resp => {
         localStorage.setItem('token', resp.data.token)
-        //! what are we sending this to? 
-        props.history.push('/api/videos')
+        localStorage.setItem('userId', )
+        localStorage.setItem('userName', )
+        props.history.push('/')
       })
   }
 

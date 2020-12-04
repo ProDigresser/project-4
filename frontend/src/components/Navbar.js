@@ -36,7 +36,7 @@ const NavBar = (props) => {
         {localStorage.getItem('token') && <Link to="/videos/new-video">Add a Video</Link>}
       </li>
       <li>
-        {localStorage.getItem('token') && <Link to="/videos/new-video">Add a Video</Link>}
+        {localStorage.getItem('token') && <Link to="/videos/edit-video">Edit a Video</Link>}
       </li>
       <li>
         {localStorage.getItem('token') && <button
