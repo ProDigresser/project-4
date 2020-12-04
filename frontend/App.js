@@ -1,12 +1,16 @@
 import React from 'react'
-import { BrowserRouter, Switch, Link, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+
 import Home from './src/components/Home'
 import Navbar from './src/components/Navbar'
-import './styles/style.scss'
 import Signup from './src/components/Signup'
+import Video from './src/components/Video'
 import Login from './src/components/Login'
-// ! Some starter code for your frontends, change this
-// ! however you like.
+import EditVideo from './src/components/EditVideo'
+
+import './styles/style.scss'
+
 const App = () => (
   <BrowserRouter>
     <Navbar />
@@ -14,6 +18,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/login" component={Login} />
+      <Route exact path ="/edit-video/:videoId" component={EditVideo} />
+      <Route exact path="/videos/:videoId" component={Video} />
     </Switch>
   </BrowserRouter>
 )

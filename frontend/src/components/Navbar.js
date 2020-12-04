@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 const NavBar = (props) => {
+
+  // Functions
 
   function handleLogout() {
     localStorage.removeItem('token')
     props.history.push('/')
   }
 
+  // Variables
 
   const token = localStorage.getItem('token')
   const userId = localStorage.getItem('userId')
   const userName = localStorage.getItem('userName')
+
+  // Content
 
   return <nav>
     <ul>
