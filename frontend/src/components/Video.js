@@ -94,13 +94,16 @@ const Video = (props) => {
   // Content
 
   return <div>
-    {isCreator(video.user) && <div>
+    {isCreator(video.user.id) && <div>
       <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
       <button onClick={handleDelete}>Delete Video</button>
     </div>}
     <div>
       <h2>{video.title}</h2>
       <p>{video.description}</p>
+    </div>
+    <div>
+      {/* comments go here */}
     </div>
 
   </div>
