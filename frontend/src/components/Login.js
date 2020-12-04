@@ -19,30 +19,30 @@ const Login = (props) => {
     event.preventDefault()
 
     axios.post('/api/login', formData)
-    .then(resp => {
-      localStorage.setItem('token', resp.data.token)
-      //! what are we sending this to? 
-      props.history.push('/api/videos')
-    })
+      .then(resp => {
+        localStorage.setItem('token', resp.data.token)
+        //! what are we sending this to? 
+        props.history.push('/api/videos')
+      })
   }
 
   return <form onSubmit={handleSubmit}>
     <div>
       <label>Email</label>
-      <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.email}
-      name="email"
+      <input
+        type="text"
+        onChange={handleChange}
+        value={formData.email}
+        name="email"
       />
     </div>
     <div>
       <label>password</label>
       <input
-      type="password"
-      onChange={handleChange}
-      value={formData.password}
-      name="password"
+        type="password"
+        onChange={handleChange}
+        value={formData.password}
+        name="password"
       />
     </div>
     <button> Login </button>
