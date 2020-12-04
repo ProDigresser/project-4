@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Link, Route } from 'react-router-dom'
+import Home from './src/components/Home'
 import './styles/style.scss'
 
 // ! Some starter code for your frontends, change this
@@ -12,9 +13,7 @@ const App = () => (
   </BrowserRouter>
 )
 
-const Home = () => <Link to={'/hello/world'}>
-  Go to /hello/world page.
-</Link>
+
 
 
 export default App
