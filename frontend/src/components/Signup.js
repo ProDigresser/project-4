@@ -52,7 +52,7 @@ const Signup = (props) => {
 
   return <form onSubmit={handleSubmit}>
     <div>
-      <label>username</label>
+      <label>Username *</label>
       <input
         type="text"
         onChange={handleChange}
@@ -64,7 +64,7 @@ const Signup = (props) => {
       </p>}
     </div>
     <div>
-      <label>Email</label>
+      <label>Email *</label>
       <input
         type="text"
         onChange={handleChange}
@@ -85,7 +85,7 @@ const Signup = (props) => {
       />
     </div>
     <div>
-      <label>Password</label>
+      <label>Password *</label>
       <input
         type="password"
         onChange={handleChange}
@@ -97,7 +97,7 @@ const Signup = (props) => {
       </p>}
     </div>
     <div>
-      <label>Confirm Password</label>
+      <label>Confirm Password *</label>
       <input
         type="password"
         onChange={handleChange}
@@ -107,6 +107,9 @@ const Signup = (props) => {
       {errors.passwordConfirmation && <p style={{ color: 'red' }}>
         {'Does not match password'}
       </p>}
+    </div>
+    <div>
+    <small>* required field</small>
     </div>
     <button>Signup</button>
   </form>
