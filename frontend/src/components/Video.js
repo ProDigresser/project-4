@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { isCreator } from '../lib/authentication'
 
 const Video = (props) => {
 
   // Variables
-  
+
   const token = localStorage.getItem('token')
-  const videoId = props.match.params.videoId 
+  const videoId = props.match.params.videoId
   const [video, updateVideo] = useState([])
 
   const [formData, updateFormData] = useState({
@@ -28,7 +30,7 @@ const Video = (props) => {
 
   // functions
 
- 
+
   function handleDelete() {
     axios.delete(`/api/video/${videoId}`, {
       headers: { Authorization: `Bearer ${token}` }
@@ -36,7 +38,7 @@ const Video = (props) => {
       .then(() => {
         props.history.push('/')
       })
-  } 
+  }
 
   function handleChange(event) {
     const name = event.target.name
@@ -92,6 +94,10 @@ const Video = (props) => {
   // Content
 
   return <div>
+    {isCreator(video.user) && <div>
+      <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
+      <button onClick={handleDelete}>Delete Video</button>
+    </div>}
     <div>
       <h2>{video.title}</h2>
       <p>{video.description}</p>
