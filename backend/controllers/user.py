@@ -19,9 +19,9 @@ def login():
   user = User.query.filter_by(email=data['email']).first()
 
   if not user:
-    return { 'message': 'Unauthorized' }, 402
+    return { 'message': 'Unauthorized' }, 401
 
   token = user.generate_token()
-
-  return{ 'token': token, 'message': 'Welcome back!'}
+  print(user)
+  return{ 'token': token, 'username':user.username, 'user_id':user.id, 'message': 'Welcome back!'}
 

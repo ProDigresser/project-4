@@ -18,7 +18,6 @@ class User(db.Model, BaseModel):
   username = db.Column(db.String(20), nullable=False, unique=True)
   email = db.Column(db.String(128), nullable=False, unique=True)
   password_hash = db.Column(db.String(128), nullable=False)
-  profession = db.Column(db.String(128), nullable=True)
   
   genres = db.relationship('Genre', secondary=user_genre_join, backref='users')
   following = db.relationship('User', secondary=user_followers_join, 
