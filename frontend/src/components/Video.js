@@ -94,18 +94,51 @@ const Video = (props) => {
   // Content
 
   return <div>
+    {/* Edit Video */}
     {isCreator(video.user.id) && <div>
       <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
       <button onClick={handleDelete}>Delete Video</button>
     </div>}
+    {/* Video Content */}
     <div>
       <h2>{video.title}</h2>
       <p>{video.description}</p>
     </div>
+    {/* Existing Comments */}
     <div>
-      {/* comments go here */}
-    </div>
+      <h2>Comments</h2>
+      {video.comments && video.comments.map(comment => {
+        return <div key={comment.id}>
+          <Link to={`/users/${comment.user.id}`}>
+            {comment.user.username}
+          </Link>
+          <p>{comment.content}</p>
+          {isCreator(comment.user.id) && <div>
+            <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
+              Edit Comment
+            </Link>
+            <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
+          </div>}
 
+        </div>
+
+      })}
+    </div>
+    {/* New Comment */}
+    <div>
+      <form
+        onSubmit={handleComment}
+      >
+        <textarea
+          value={formData.content}
+          placeholder="Add a comment.."
+          onChange={handleChange}
+          name='content'
+        >
+        </textarea>
+        <button>Submit</button>
+      </form>
+    </div>
   </div>
 }
 
