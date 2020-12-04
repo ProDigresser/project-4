@@ -21,22 +21,22 @@ const NavBar = (props) => {
   return <nav>
     <ul>
       <li>
-        <Link to="/">Videos</Link>
+        <Link className="navLink" to="/">Videos</Link>
       </li>
       <li>
-        {!localStorage.getItem('token') && <Link to="/signup">Sign Up</Link>}
+        {!localStorage.getItem('token') && <Link className="navLink" to="/signup">Sign Up</Link>}
       </li>
       <li>
-        {!localStorage.getItem('token') && <Link to="/login">Log In</Link>}
+        {!localStorage.getItem('token') && <Link className="navLink" to="/login">Log In</Link>}
       </li>
       <li>
-        {localStorage.getItem('token') && <p>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></p>}
+        {localStorage.getItem('token') && <p>Welcome back <Link className="navLink" to={`/users/${userId}`}>{userName}</Link></p>}
       </li>
       <li>
-        {localStorage.getItem('token') && <Link to="/videos/new-video">Add a Video</Link>}
+        {localStorage.getItem('token') && <Link className="navLink" to="/videos/new-video">Add a Video</Link>}
       </li>
       <li>
-        {localStorage.getItem('token') && <Link to="/videos/edit-video">Edit a Video</Link>}
+        {localStorage.getItem('token') && <Link className="navLink" to="/videos/edit-video">Edit a Video</Link>}
       </li>
       <li>
         {localStorage.getItem('token') && <button
