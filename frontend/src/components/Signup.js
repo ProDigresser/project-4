@@ -7,7 +7,7 @@ const Signup = (props) => {
     email: '',
     profession: '',
     password: '',
-    passwordConfirmation: ''
+    password_confirmation: ''
   })
 
   const [errors, updateErrors] = useState({
@@ -15,7 +15,7 @@ const Signup = (props) => {
     email: '',
     profession: '',
     password: '',
-    passwordConfirmation: ''
+    password_confirmation: ''
   })
 
   function handleChange(event) {
@@ -101,10 +101,10 @@ const Signup = (props) => {
       <input
         type="password"
         onChange={handleChange}
-        value={formData.passwordConfirmation}
-        name="passwordConfirmation"
+        value={formData.password_confirmation}
+        name="password_confirmation"
       />
-      {errors.passwordConfirmation && <p style={{ color: 'red' }}>
+      {errors.password_confirmation && <p style={{ color: 'red' }}>
         {'Does not match password'}
       </p>}
     </div>

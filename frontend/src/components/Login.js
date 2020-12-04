@@ -23,8 +23,7 @@ const Login = (props) => {
         localStorage.setItem('token', resp.data.token)
         localStorage.setItem('userId', )
         localStorage.setItem('userName', )
-        //! what are we sending this to? 
-        props.history.push('/api/videos')
+        props.history.push('/')
       })
   }
 
