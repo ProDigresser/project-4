@@ -14,6 +14,7 @@ class CommentSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
 
   user_id = fields.Integer()
   user = fields.Nested('UserSchema', only=('id', 'username'))
+  nested_comments = fields.Nested('NestedCommentSchema', many=True)
 
 
 class NestedCommentSchema(ma.SQLAlchemyAutoSchema, BaseSchema):

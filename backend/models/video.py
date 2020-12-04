@@ -7,7 +7,7 @@ class Video(db.Model, BaseModel):
 
   __tablename__ = 'videos'
 
-  title = db.Column(db.String(40), nullable=False, unique=True)
+  title = db.Column(db.String(50), nullable=False, unique=True)
   description = db.Column(db.String(200), nullable=True)
   vid_url = db.Column(db.String(200), nullable=False, unique=True)
 
