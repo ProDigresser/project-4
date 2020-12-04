@@ -42,7 +42,6 @@ def get_single_video(id):
   
   return populate_video.jsonify(video), 200
 
-
 # Add a video
 
 @router.route('/videos', methods=['POST'])
@@ -96,9 +95,8 @@ def remove(id):
 # Post a comment
 
 @router.route('/videos/<int:video_id>/comments', methods=['POST'])
-@secure_route
 def comment_create(video_id):
-
+  print(g.current_user.id)
   comment_data = request.get_json()
   video = Video.query.get(video_id)
   comment = comment_schema.load(comment_data)
@@ -106,7 +104,6 @@ def comment_create(video_id):
   comment.user_id = g.current_user.id
   comment.save()
   return comment_schema.jsonify(comment)
-
 
 
 
