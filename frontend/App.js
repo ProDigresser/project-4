@@ -1,15 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-
+import EditVideo from './src/components/EditVideo'
 import Home from './src/components/Home'
 import Navbar from './src/components/Navbar'
 import Signup from './src/components/Signup'
 import Video from './src/components/Video'
 import Login from './src/components/Login'
-import EditVideo from './src/components/EditVideo'
-
-import './styles/style.scss'
+import './src/styles/styles.scss'
 
 const App = () => (
   <BrowserRouter>

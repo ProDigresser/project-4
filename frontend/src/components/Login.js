@@ -20,9 +20,10 @@ const Login = (props) => {
 
     axios.post('/api/login', formData)
       .then(resp => {
+        console.log(resp.data)
         localStorage.setItem('token', resp.data.token)
-        localStorage.setItem('userId', )
-        localStorage.setItem('userName', )
+        localStorage.setItem('userId', resp.data.user_id)
+        localStorage.setItem('userName', resp.data.username)
         props.history.push('/')
       })
   }
