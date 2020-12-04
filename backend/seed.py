@@ -4,10 +4,6 @@ from models.comments import Comment
 from models.genre import Genre
 from models.video import Video
 
-
-
-
-
 with app.app_context():
   db.drop_all()
   db.create_all()
@@ -15,33 +11,34 @@ with app.app_context():
   admin = User(
     username='Admin',
     email='hello@admin.com',
-    password='hello1',
+    password='Hello1!',
     profession='Admin'
   )
 
   dec = User(
     username='Dec',
     email='dec@dec.com',
-    password='dec',
+    password='Dec1!',
     profession='Developer'
   )
   
   test_user_one = User(
     username='Laurence',
     email='hello@laurence.com',
-    password='hello1',
+    password='Hello1!',
     profession='Developer'
   )
 
   sherryll = User (
-    username="sherryll",
-    email="hello@sherryll.com",
-    password="sherryll"
+    username='Sherryll',
+    email='hello@sherryll.com',
+    password='Sherryll1!',
   )
   bob = User (
-    username="bob",
-    email="hello@bob.com",
-    password="bob"
+    username='Bob',
+    email='hello@bob.com',
+    password='Bob1!',
+    following=[sherryll, test_user_one]
   )
   test_user_one.save()
   dec.save()
@@ -71,13 +68,13 @@ with app.app_context():
   print('Videos Created!')
   
   comment1 = Comment(
-    content="hello this is a comment",
+    content='hello this is a comment',
     video=bad_video,
     user=sherryll
   )
 
   comment2 = Comment(
-    content="this is another comment",
+    content='this is another comment',
     video=good_video,
     user=admin
   )
