@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
 // import '../styles/styles.scss'
-
+// import HowTo from '../styles/HowTo.jpg'
 
 const Home = () => {
 
@@ -53,6 +53,7 @@ const Home = () => {
   // Content
 
   return <main className="homeMain">
+    {/* <img src={'HowTo'} alt="howto"/> */}
     <div className="genre">
       <input
         placeholder="Search for a video.."
