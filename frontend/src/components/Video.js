@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { isCreator } from '../lib/authentication'
+import ReactPlayer from 'react-player'
 
 const Video = (props) => {
 
@@ -93,53 +94,56 @@ const Video = (props) => {
 
   // Content
 
-  return <div>
-    {/* Edit Video */}
-    {isCreator(video.user.id) && <div>
-      <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
-      <button onClick={handleDelete}>Delete Video</button>
-    </div>}
-    {/* Video Content */}
+  return <main>
+
     <div>
-      <h2>{video.title}</h2>
-      <p>{video.description}</p>
-    </div>
-    {/* Existing Comments */}
-    <div>
-      <h2>Comments</h2>
-      {video.comments && video.comments.map(comment => {
-        return <div key={comment.id}>
-          <Link to={`/users/${comment.user.id}`}>
-            {comment.user.username}
-          </Link>
-          <p>{comment.content}</p>
-          {isCreator(comment.user.id) && <div>
-            <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
-              Edit Comment
+      {/* Edit Video */}
+      {isCreator(video.user.id) && <div>
+        <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
+        <button onClick={handleDelete}>Delete Video</button>
+      </div>}
+      {/* Video Content */}
+      <div>
+        <h2>{video.title}</h2>
+        <p>{video.description}</p>
+      </div>
+      {/* Existing Comments */}
+      <div>
+        <h2>Comments</h2>
+        {video.comments && video.comments.map(comment => {
+          return <div key={comment.id}>
+            <Link to={`/users/${comment.user.id}`}>
+              {comment.user.username}
             </Link>
-            <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
-          </div>}
+            <p>{comment.content}</p>
+            {isCreator(comment.user.id) && <div>
+              <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
+                Edit Comment
+            </Link>
+              <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
+            </div>}
 
-        </div>
+          </div>
 
-      })}
-    </div>
-    {/* New Comment */}
-    <div>
-      <form
-        onSubmit={handleComment}
-      >
-        <textarea
-          value={formData.content}
-          placeholder="Add a comment.."
-          onChange={handleChange}
-          name='content'
+        })}
+      </div>
+      {/* New Comment */}
+      <div>
+        <form
+          onSubmit={handleComment}
         >
-        </textarea>
-        <button>Submit</button>
-      </form>
+          <textarea
+            value={formData.content}
+            placeholder="Add a comment.."
+            onChange={handleChange}
+            name='content'
+          >
+          </textarea>
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
 }
 
 export default Video

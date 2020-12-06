@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import ReactPlayer from 'react-player'
 // import '../styles/styles.scss'
 
 
@@ -51,8 +52,8 @@ const Home = () => {
 
   // Content
 
-  return <div>
-    <div>
+  return <main className="homeMain">
+    <div className="genre">
       <input
         placeholder="Search for a video.."
         onChange={(event) => updateSearchText(event.target.value)}
@@ -67,19 +68,27 @@ const Home = () => {
         })}
       </select>
     </div>
-    <div>
+    <div className="videoCards">
       {filterVideos().map((video, index) => {
         return <div key={index}>
-          <Link to={`/videos/${video.id}`}>
-            <div>
-              <h2>{video.title}</h2>
-              <p>{video.description}</p>
+          <div className="cardOuter">
+            <ReactPlayer className="thumbnail"
+              url="https://www.youtube.com/watch?v=E8gmARGvPlI"
+              fluid={false}
+              width={280}
+              height={170}
+            />
+            <div className="descriptionContainer">
+              <Link className="vidLink" to={`/videos/${video.id}`}>
+                <h2>{video.title}</h2>
+                <p>{video.description}</p>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
       })}
     </div>
-  </div>
+  </main>
 }
 
 export default Home

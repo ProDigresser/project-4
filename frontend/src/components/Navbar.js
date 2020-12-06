@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-// import Logo from '../styles/Logo.png'
+// import Logo from '../styles/Logo.jpg'
 
 const NavBar = (props) => {
 
@@ -20,7 +20,7 @@ const NavBar = (props) => {
   // Content
 
   return <nav>
-    {/* <img className="navLogo" src={Logo} alt="Logo"/> */}
+    {/* <img src={Logo} alt="logo"/> */}
     <ul>
       <li>
         <Link className="navLink" to="/">Videos</Link>
