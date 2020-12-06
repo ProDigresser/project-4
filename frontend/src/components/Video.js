@@ -94,8 +94,7 @@ const Video = (props) => {
 
   // Content
 
-  return <main>
-
+  return <main className="singleVideoMain">
     <div>
       {/* Edit Video */}
       {isCreator(video.user.id) && <div>
@@ -103,36 +102,23 @@ const Video = (props) => {
         <button onClick={handleDelete}>Delete Video</button>
       </div>}
       {/* Video Content */}
-      <div>
-        <h2>{video.title}</h2>
-        <p>{video.description}</p>
+      <h2 className="videoTitle">{video.title}</h2>
+      <div className="thumbnailDescription">
+        <ReactPlayer className="singleThumbnail"
+          url="https://www.youtube.com/watch?v=ZzFYmz2lfT4"
+          fluid={false}
+          width={600}
+          height={400}
+        />
       </div>
+      <p className="videoDescription">{video.description}</p>
       {/* Existing Comments */}
-      <div>
-        <h2>Comments</h2>
-        {video.comments && video.comments.map(comment => {
-          return <div key={comment.id}>
-            <Link to={`/users/${comment.user.id}`}>
-              {comment.user.username}
-            </Link>
-            <p>{comment.content}</p>
-            {isCreator(comment.user.id) && <div>
-              <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
-                Edit Comment
-            </Link>
-              <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
-            </div>}
-
-          </div>
-
-        })}
-      </div>
-      {/* New Comment */}
-      <div>
+      <div className="commentSection">
+        <h2 className="comments">Comments</h2>
         <form
           onSubmit={handleComment}
         >
-          <textarea
+          <textarea className="vidComment"
             value={formData.content}
             placeholder="Add a comment.."
             onChange={handleChange}
@@ -141,6 +127,24 @@ const Video = (props) => {
           </textarea>
           <button>Submit</button>
         </form>
+        <div className="existingComments">
+          {video.comments && video.comments.map(comment => {
+            return <div className="commentUser" key={comment.id}>
+              <Link className="userLink" to={`/users/${comment.user.id}`}>
+                {comment.user.username}
+              </Link>
+              <p className="commentContent">{comment.content}</p>
+              {isCreator(comment.user.id) && <div>
+                <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
+                  Edit Comment
+                </Link>
+                <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
+              </div>}
+            </div>
+          })}
+        </div>
+      </div>
+      <div>
       </div>
     </div>
   </main>

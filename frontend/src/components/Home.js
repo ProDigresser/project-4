@@ -73,7 +73,7 @@ const Home = () => {
         return <div key={index}>
           <div className="cardOuter">
             <ReactPlayer className="thumbnail"
-              url="https://www.youtube.com/watch?v=E8gmARGvPlI"
+              url="https://www.youtube.com/watch?v=ZzFYmz2lfT4"
               fluid={false}
               width={280}
               height={170}

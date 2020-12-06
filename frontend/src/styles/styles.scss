@@ -170,11 +170,100 @@ nav {
   
     h2 {
       color: var(--light);
+      font-size: 18px;
     }
     p{
-      color: var(--grey)
+      color: var(--grey);
+      font-size: 13px;
+      margin:4px;
     }
 
 }
 
 
+
+
+.singleVideoMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .thumbnailDescription {
+    background-color: var(--dark);
+    width: 600px;
+    height: 400px;
+    margin: 12px;
+    box-shadow: 0 0 8px var(--extraLight);
+    background: var(--mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .videoDescription{
+   
+    color: var(--grey);
+    padding: 20px;
+  }
+  .videoTitle{
+    background-color: var(--extraLight);
+    color: var(--dark);
+    padding: 10px;
+   
+    border-radius: 10px;
+   
+  }
+  .commentSection {
+    display:flex;
+    flex-direction: column;
+
+  }
+  .vidComment {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 600px;
+    background-color: var(--mid);
+    font-family: var(--font) ;
+    color: var(--light);
+    box-shadow: 0 0 8px var(--extraLight);
+    background: var(--mid);
+  }
+  .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--extraLight);
+   
+  }
+  button {
+    height: 45px;
+    width: 12%;
+    font-family: var(--font);
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    margin: 20px 0 20px 0;
+    background-color: var(--extraLight);
+  }
+
+  .existingComments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  .commentUser {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .userLink {
+    text-decoration: none;
+    color: var(--light)
+  }
+  .commentContent {
+    color: var(--grey);
+    font-size: 20px;
+  }
+}
