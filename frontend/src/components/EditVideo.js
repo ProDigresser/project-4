@@ -8,7 +8,7 @@ const EditVideo = (props) => {
     description: '',
     vid_url: ''
   })
-  const inputFields = ['title', 'description', 'vid_url']
+  const inputFields = ['Title', 'Description', 'Vid_url']
 
   useEffect(() => {
     axios.get(`/api/videos/${props.match.params.videoId}`)
@@ -36,22 +36,24 @@ const EditVideo = (props) => {
       })
   }
 
-  return <form onSubmit={handleSubmit}>
-    {inputFields.map(field => {
-      return <div key={field}>
-        <label>{field}</label>
-        <input
-          type="text"
-          onChange={handleChange}
-          value={formData[field]}
-          name={field}
-        />
-      </div>
+  return <main className="mainEditVideo">
+    <form onSubmit={handleSubmit}>
+      {inputFields.map(field => {
+        return <div key={field}>
+          <label>{field}</label>
+          <input
+            type="text"
+            onChange={handleChange}
+            value={formData[field]}
+            name={field}
+          />
+        </div>
 
 
-    })}
-    <button>Save</button>
-  </form>
+      })}
+      <button>Save</button>
+    </form>
+  </main>
 }
 
 export default EditVideo

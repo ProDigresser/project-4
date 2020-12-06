@@ -62,7 +62,7 @@ nav {
   }
 }
 
-.signupMain {
+.signupMain, .loginMain, .mainEditVideo {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -111,3 +111,4 @@ nav {
     }
   }
 }
+
