@@ -53,13 +53,13 @@ def create():
   video_dictionary['user_id'] = g.current_user.id
 
   try:
-    video = video_schema.load(video_dictionary)
+    video = populate_video.load(video_dictionary)
   except ValidationError as e:
-    return { 'errors': e.messages, 'message': 'Something went wrong.' }
+    return { 'errors': e.messages, 'message': 'Something went wrong.' }, 401
   
   video.save()
 
-  return video_schema.jsonify(video), 200
+  return populate_video.jsonify(video), 200
 
 # Edit a video
 
@@ -169,13 +169,13 @@ def update_comment(id):
 def create_nested(comment_id):
   nested_comment_data = request.get_json()
   comment = Comment.query.get(comment_id)
-
   if not comment:
     return { 'message': 'Comment not available' }, 404
 
   nested_comment = nested_comment_schema.load(nested_comment_data)
   nested_comment.comment = comment
   nested_comment.user_id = g.current_user.id
+  nested_comment.comment_id = comment_id
   nested_comment.save()
 
   video = Video.query.get(comment.video_id)

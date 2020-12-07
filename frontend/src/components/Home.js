@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
 import '../styles/styles.scss'
-// import HowTo from '../styles/HowTo.jpg'
+
 
 const Home = () => {
 
   //  Variables
 
-  
+
   const [videos, updateVideos] = useState([])
   const [videoFilter, updateVideoFilter] = useState('Select your Genre')
   const [searchText, updateSearchText] = useState('')
@@ -23,7 +23,7 @@ const Home = () => {
         updateVideos(resp.data)
         console.log(resp.data)
       })
-      
+
   }, [])
 
   // Loading screen
@@ -50,7 +50,7 @@ const Home = () => {
   // Content
 
   return <main className="homeMain">
-    {/* <img src={'HowTo'} alt="howto"/> */}
+
     <div className="genre">
       <input
         placeholder="Search for a video.."
@@ -75,12 +75,13 @@ const Home = () => {
         <option>Productivity</option>
       </select>
     </div>
+
     <div className="videoCards">
       {filterVideos().map((video, index) => {
         return <div key={index}>
           <div className="cardOuter">
             <ReactPlayer className="thumbnail"
-              url="https://www.youtube.com/watch?v=ZzFYmz2lfT4"
+              url={video.vid_url}
               fluid={false}
               width={280}
               height={170}

@@ -17,7 +17,7 @@ class Video(db.Model, BaseModel):
 
   user = db.relationship('User', backref='videos')
 
-  # ! Likes stretch goal!
+
 
 
   
