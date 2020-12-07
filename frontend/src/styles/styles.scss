@@ -69,8 +69,14 @@ nav {
     .navLogout {
       margin-bottom: 25px;
     }
-  }
+ 
   
+}
+}
+.welcomeBack{
+    text-decoration: none;
+
+  color: var(--grey);
 }
 
 
@@ -126,7 +132,8 @@ nav {
 
 .homeMain {
   input {
-      width: 20%;
+      width:100%;
+      margin: 5% 0; 
       height: 35px;
       font-family: var(--font);
       font-size: 16px;
@@ -142,13 +149,6 @@ nav {
     align-items: center;
     margin: 3% 30%;
 
-  }
-
-  
-  input {
-   width:100%;
-   margin: 5% 0; 
-   
   }
   select {
     height: 35px;

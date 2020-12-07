@@ -48,8 +48,8 @@ const NavBar = (props) => {
         </li>
       </ul>
     </nav>
-    <p>
-      {localStorage.getItem('token') && <p>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></p>}
+    <p className="welcomeBack">
+      {localStorage.getItem('token') && <p>Welcome back <Link className="welcomeBack" to={`/users/${userId}`}>{userName}</Link></p>}
     </p>
   </div>
 }

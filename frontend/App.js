@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import Users from './src/components/Users'
 import EditVideo from './src/components/EditVideo'
 import EditComment from './src/components/EditComment'
 import Home from './src/components/Home'
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path ="/edit-video/:videoId" component={EditVideo} />
       <Route exact path ="/edit-comment/:videoId/:commentId" component={EditComment} />
       <Route exact path="/videos/:videoId" component={Video} />
+      <Route exact path="/users" component={Users} />
     </Switch>
   </BrowserRouter>
 )
