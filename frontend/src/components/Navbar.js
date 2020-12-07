@@ -49,7 +49,7 @@ const NavBar = (props) => {
       </ul>
     </nav>
     <p>
-      {localStorage.getItem('token') && <p>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></p>}
+      {localStorage.getItem('token') && <span>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></span>}
     </p>
   </div>
 }
