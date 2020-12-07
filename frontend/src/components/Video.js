@@ -75,7 +75,7 @@ const Video = (props) => {
   }
 
   function handleDeleteComment(commentId) {
-    axios.delete(`/api/videos/${videoId}/comments/${commentId}`, {
+    axios.delete(`/api/comments/${commentId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
@@ -135,7 +135,7 @@ const Video = (props) => {
               </Link>
               <p className="commentContent">{comment.content}</p>
               {isCreator(comment.user.id) && <div>
-                <Link to={`/videos/edit-comment/${videoId}/${comment.id}`}>
+                <Link to={`/edit-comment/${videoId}/${comment.id}`}>
                   Edit Comment
                 </Link>
                 <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
