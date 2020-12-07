@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import EditVideo from './src/components/EditVideo'
 import EditComment from './src/components/EditComment'
+import ReplyComment from './src/components/ReplyComment'
 import Home from './src/components/Home'
 import Navbar from './src/components/Navbar'
 import Signup from './src/components/Signup'
@@ -21,6 +22,7 @@ const App = () => (
       <Route exact path="/add-video" component={AddVideo} />
       <Route exact path ="/edit-video/:videoId" component={EditVideo} />
       <Route exact path ="/edit-comment/:videoId/:commentId" component={EditComment} />
+      <Route exact path ="/reply-comment/:commentId" component={ReplyComment} />
       <Route exact path="/videos/:videoId" component={Video} />
     </Switch>
   </BrowserRouter>
