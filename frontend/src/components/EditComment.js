@@ -6,7 +6,7 @@ const EditComment = (props) => {
   const [formData, updateFormData] = useState({
     content: ''
   })
-
+  console.log(props)
   useEffect(() => {
     axios.get(`/api/comments/${props.match.params.commentId}`)
       .then(resp => {

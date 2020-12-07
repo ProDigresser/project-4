@@ -75,7 +75,7 @@ const Video = (props) => {
   }
 
   function handleDeleteComment(commentId) {
-    axios.delete(`/api/videos/${videoId}/comments/${commentId}`, {
+    axios.delete(`/api/comments/${commentId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
