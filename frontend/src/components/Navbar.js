@@ -19,36 +19,37 @@ const NavBar = (props) => {
 
   // Content
 
-  return <nav>
-    <ul>
-      <img className="logo" src={logo} alt="logo" />
-      <li>
-        <Link className="navLink" to="/">Videos</Link>
-      </li>
-      <li>
-        {!localStorage.getItem('token') && <Link className="navLink" to="/signup">Sign Up</Link>}
-      </li>
-      <li>
-        {!localStorage.getItem('token') && <Link className="navLink" to="/login">Log In</Link>}
-      </li>
-      <li>
-        {localStorage.getItem('token') && <p>Welcome back <Link className="navLink" to={`/users/${userId}`}>{userName}</Link></p>}
-      </li>
-      <li>
-        {localStorage.getItem('token') && <Link className="navLink" to="/videos/new-video">Add a Video</Link>}
-      </li>
-      <li>
-        {localStorage.getItem('token') && <Link className="navLink" to="/videos/edit-video">Edit a Video</Link>}
-      </li>
-      <li>
-        {localStorage.getItem('token') && <button
-          onClick={handleLogout}>
-          Log Out
-        </button>}
-      </li>
-
-    </ul>
-  </nav>
+  return <div>
+    <nav>
+      <ul>
+        <img className="logo" src={logo} alt="logo" />
+        <li>
+          {!localStorage.getItem('token') && <Link className="navLink" to="/signup">Sign Up</Link>}
+        </li>
+        <li>
+          {!localStorage.getItem('token') && <Link className="navLink" to="/login">Log In</Link>}
+        </li>
+        <li>
+          <Link className="navLink" to="/">Videos</Link>
+        </li>
+        <li>
+          {localStorage.getItem('token') && <Link className="navLink" to="/videos/new-video">Add a Video</Link>}
+        </li>
+        <li>
+          {localStorage.getItem('token') && <Link className="navLink" to="/videos/edit-video">Edit a Video</Link>}
+        </li>
+        <li className="navLogout">
+          {localStorage.getItem('token') && <button
+            onClick={handleLogout}>
+            Log Out
+          </button>}
+        </li>
+      </ul>
+    </nav>
+    <p>
+      {localStorage.getItem('token') && <p>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></p>}
+    </p>
+  </div>
 }
 
 export default withRouter(NavBar)

@@ -29,7 +29,8 @@ body {
 nav {
   margin: 0;
   background-color: var(--dark);
-  .navLink {
+  
+  button, .navLink {
     text-decoration: none;
     color: var(--grey);
     background-color: var(--mid);
@@ -52,6 +53,8 @@ nav {
     justify-content: space-between;
     list-style-type: none;
 
+    
+
    li {
     
       height: 45px;
@@ -62,6 +65,9 @@ nav {
       border-radius: 4px;
       border: none;
 
+    }
+    .navLogout {
+      margin-bottom: 25px;
     }
   }
   
@@ -128,11 +134,32 @@ nav {
       border: solid 2px var(--light);
       color: #45A29E;
       border-radius: 8px;
-
+      
+  }
+  .genre {
+    display:flex;
+    flex-direction: column;
+    widows: 600px;
+    
+  }
+  section {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .image{
+    width: 20%;
+    justify-self: self-start;
+    margin-left: 0px;
+  }
+  
+  input {
+    width: 200px;
   }
   select {
     height: 35px;
-      width: 15%;
+      width: 200px;
       font-family: var(--font);
       font-size: 16px;
       border-radius: 4px;
