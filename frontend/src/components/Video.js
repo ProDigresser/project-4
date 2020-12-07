@@ -93,9 +93,9 @@ const Video = (props) => {
 
 
   function handleDeleteReply(nestedComment) {
-    const commentId = 1
+    const commentId = nestedComment.comment_id
     const replyId = nestedComment.id
-    axios.delete(`/comments/${commentId}/${replyId}`, {
+    axios.delete(`/api/comments/${commentId}/${replyId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
