@@ -37,6 +37,9 @@ nav {
     border: solid 2px var(--light);
     border-radius: 10px;
   }
+  img {
+    height:80px;
+  }
 
 
   ul {
@@ -61,7 +64,9 @@ nav {
 
     }
   }
+  
 }
+
 
 .signupMain, .loginMain, .mainEditVideo {
   width: 100vw;

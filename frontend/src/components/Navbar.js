@@ -13,15 +13,15 @@ const NavBar = (props) => {
 
   // Variables
 
-  const token = localStorage.getItem('token') 
+  const token = localStorage.getItem('token')
   const userId = localStorage.getItem('userId')
   const userName = localStorage.getItem('userName')
 
   // Content
 
   return <nav>
-    <img src={logo} alt="logo"/>
     <ul>
+      <img className="logo" src={logo} alt="logo" />
       <li>
         <Link className="navLink" to="/">Videos</Link>
       </li>
@@ -46,6 +46,7 @@ const NavBar = (props) => {
           Log Out
         </button>}
       </li>
+
     </ul>
   </nav>
 }
