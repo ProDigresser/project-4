@@ -53,13 +53,13 @@ def create():
   video_dictionary['user_id'] = g.current_user.id
 
   try:
-    video = video_schema.load(video_dictionary)
+    video = populate_video.load(video_dictionary)
   except ValidationError as e:
-    return { 'errors': e.messages, 'message': 'Something went wrong.' }
+    return { 'errors': e.messages, 'message': 'Something went wrong.' }, 401
   
   video.save()
 
-  return video_schema.jsonify(video), 200
+  return populate_video.jsonify(video), 200
 
 # Edit a video
 
@@ -113,8 +113,7 @@ def comment_create(video_id):
 
 # Get one comment 
 
-@router.route('/videos/<int:id>', methods=['GET'])
-@secure_route
+@router.route('/comments/<int:id>', methods=['GET'])
 def get_single_comment(id):
   comment = Comment.query.get(id)
 
