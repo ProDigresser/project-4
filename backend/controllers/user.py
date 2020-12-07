@@ -1,8 +1,10 @@
 from flask import Blueprint, request
 from models.user import User
-from serializers.user import UserSchema
+from serializers.user import UserSchema, PopulateUserSchema
+from middleware.secure_route import secure_route
 
 user_schema = UserSchema()
+populate_user = PopulateUserSchema()
 
 router = Blueprint(__name__, 'users')
 
@@ -22,7 +24,7 @@ def signup():
   request_body = request.get_json()
   user = user_schema.load(request_body)
   user.save()
-  return user_schema.jsonify(user), 200
+  return populate_user.jsonify(user), 200
 
 @router.route('/login', methods=['POST'])
 def login():
@@ -36,3 +38,19 @@ def login():
   print(user)
   return{ 'token': token, 'username':user.username, 'user_id':user.id, 'message': 'Welcome back!'}
 
+
+@router.route('/users', methods=['GET'])
+@secure_route
+def user_index():
+  users = User.query.all()
+  return user_schema.jsonify(users, many=True), 200
+
+@router.route('/users/<int:id>', methods=['GET'])
+@secure_route
+def user_single(id):
+  user = User.query.get(id)
+
+  if not user:
+    return { 'message': 'User not available' }, 404
+  
+  return populate_user.jsonify(user), 200

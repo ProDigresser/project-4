@@ -78,14 +78,13 @@ const Home = () => {
 
     <div className="videoCards">
       {filterVideos().map((video, index) => {
+        // console.log(video.vid_url.slice(17))
         return <div key={index}>
           <div className="cardOuter">
-            <ReactPlayer className="thumbnail"
-              url={video.vid_url}
-              fluid={false}
-              width={280}
-              height={170}
-            />
+            <Link className="thumbnail"
+              to={`/videos/${video.id}`}
+              style={{ backgroundImage: `url(http://i3.ytimg.com/vi/${video.vid_url.slice(17)}/hqdefault.jpg)` }}
+            ></Link>
             <div className="descriptionContainer">
               <Link className="vidLink" to={`/videos/${video.id}`}>
                 <h2>{video.title}</h2>

@@ -150,6 +150,20 @@ nav {
     margin: 3% 30%;
 
   }
+
+  .thumbnail {
+    height: 170px;
+    width: 280px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  input {
+   width:100%;
+   margin: 5% 0; 
+   
+  }
   select {
     height: 35px;
      width:100px;

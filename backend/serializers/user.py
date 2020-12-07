@@ -14,6 +14,12 @@ class UserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
 
   password = fields.String(required=True)
 
+
+class PopulateUserSchema(UserSchema):
+
+  genres = fields.Nested('GenreSchema', many=True)
+  videos = fields.Nested('VideoSchema', many=True, exclude=('user',))
+
   @validates_schema
   def check_passwords_match(self, data, **kwargs):
     if request.method == 'POST':
