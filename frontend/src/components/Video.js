@@ -33,7 +33,7 @@ const Video = (props) => {
 
 
   function handleDelete() {
-    axios.delete(`/api/video/${videoId}`, {
+    axios.delete(`/api/videos/${videoId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {
