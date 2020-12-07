@@ -139,39 +139,33 @@ nav {
   .genre {
     display:flex;
     flex-direction: column;
-    widows: 600px;
-    
+    align-items: center;
+    margin: 3% 30%;
+
   }
-  section {
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .image{
-    width: 20%;
-    justify-self: self-start;
-    margin-left: 0px;
-  }
+
   
   input {
-    width: 200px;
+   width:100%;
+   margin: 5% 0; 
+   
   }
   select {
     height: 35px;
-      width: 200px;
+     width:100px;
       font-family: var(--font);
       font-size: 16px;
       border-radius: 4px;
       border: none;
-      margin: 20px 0 20px 0;
+      width: 100%;
+      
       background-color: var(--extraLight);
   }
   .videoCards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: wrap;
+    justify-content: center;
     align-items: center;
     font-size: 10px;
   }

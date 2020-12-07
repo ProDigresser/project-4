@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
 import '../styles/styles.scss'
-import HowTo from '../styles/HowTo.jpg'
+
 
 const Home = () => {
 
@@ -50,33 +50,32 @@ const Home = () => {
   // Content
 
   return <main className="homeMain">
-    <section className="banner">
-      <img className="image" src={HowTo} alt="howto" />
-      <div className="genre">
-        <input
-          placeholder="Search for a video.."
-          onChange={(event) => updateSearchText(event.target.value)}
-          value={searchText}
-        />
-        <select
-          value={videoFilter}
-          onChange={(event) => updateVideoFilter(event.target.value)}>
-          <option>Select your Genre</option>
-          <option>Animation</option>
-          <option>Writing</option>
-          <option>Film & Video</option>
-          <option>Graphic Design</option>
-          <option>Art & Illustration</option>
-          <option>Music</option>
-          <option>Photography</option>
-          <option>UI/UX Design</option>
-          <option>Web Development</option>
-          <option>Cooking</option>
-          <option>Lifestyle</option>
-          <option>Productivity</option>
-        </select>
-      </div>
-    </section>
+
+    <div className="genre">
+      <input
+        placeholder="Search for a video.."
+        onChange={(event) => updateSearchText(event.target.value)}
+        value={searchText}
+      />
+      <select
+        value={videoFilter}
+        onChange={(event) => updateVideoFilter(event.target.value)}>
+        <option>Select your Genre</option>
+        <option>Animation</option>
+        <option>Writing</option>
+        <option>Film & Video</option>
+        <option>Graphic Design</option>
+        <option>Art & Illustration</option>
+        <option>Music</option>
+        <option>Photography</option>
+        <option>UI/UX Design</option>
+        <option>Web Development</option>
+        <option>Cooking</option>
+        <option>Lifestyle</option>
+        <option>Productivity</option>
+      </select>
+    </div>
+
     <div className="videoCards">
       {filterVideos().map((video, index) => {
         return <div key={index}>

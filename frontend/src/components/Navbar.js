@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import logo from '../styles/logo.jpg'
+import HowTo from '../styles/HowTo.jpg'
 
 const NavBar = (props) => {
 
@@ -23,6 +24,7 @@ const NavBar = (props) => {
     <nav>
       <ul>
         <img className="logo" src={logo} alt="logo" />
+        <img className="image" src={HowTo} alt="howto" />
         <li>
           {!localStorage.getItem('token') && <Link className="navLink" to="/signup">Sign Up</Link>}
         </li>
