@@ -9,9 +9,11 @@ const Home = () => {
 
   //  Variables
 
+  
   const [videos, updateVideos] = useState([])
   const [videoFilter, updateVideoFilter] = useState('Select your Genre')
   const [searchText, updateSearchText] = useState('')
+
 
   // Fetches from our backend
 
@@ -19,7 +21,9 @@ const Home = () => {
     axios.get('/api/videos')
       .then(resp => {
         updateVideos(resp.data)
+        console.log(resp.data)
       })
+      
   }, [])
 
   // Loading screen
@@ -38,16 +42,9 @@ const Home = () => {
       const title = video.title.toLowerCase()
       const filterText = searchText.toLocaleLowerCase()
       return title.includes(filterText)
-        && (videoFilter === 'Select your Genre' || video.genre === videoFilter)
+        && (videoFilter === 'Select your Genre' || video.genres.find(o => o.name === videoFilter))
     })
     return filteredVideos
-  }
-
-  function getGenres() {
-    const mappedVideos = videos.map((video => video.genre))
-    const genreList = new Set(mappedVideos)
-    const arrayGenres = Array.from(genreList)
-    return arrayGenres
   }
 
   // Content
@@ -64,9 +61,18 @@ const Home = () => {
         value={videoFilter}
         onChange={(event) => updateVideoFilter(event.target.value)}>
         <option>Select your Genre</option>
-        {getGenres().map((genre, index) => {
-          return <option key={index}>{genre}</option>
-        })}
+        <option>Animation</option>
+        <option>Writing</option>
+        <option>Film & Video</option>
+        <option>Graphic Design</option>
+        <option>Art & Illustration</option>
+        <option>Music</option>
+        <option>Photography</option>
+        <option>UI/UX Design</option>
+        <option>Web Development</option>
+        <option>Cooking</option>
+        <option>Lifestyle</option>
+        <option>Productivity</option>
       </select>
     </div>
     <div className="videoCards">
