@@ -105,7 +105,7 @@ const Video = (props) => {
       <h2 className="videoTitle">{video.title}</h2>
       <div className="thumbnailDescription">
         <ReactPlayer className="singleThumbnail"
-          url="https://www.youtube.com/watch?v=ZzFYmz2lfT4"
+          url={video.vid_url}
           fluid={false}
           width={600}
           height={400}
