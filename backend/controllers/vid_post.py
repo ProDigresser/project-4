@@ -113,8 +113,7 @@ def comment_create(video_id):
 
 # Get one comment 
 
-@router.route('/videos/<int:id>', methods=['GET'])
-@secure_route
+@router.route('/comments/<int:id>', methods=['GET'])
 def get_single_comment(id):
   comment = Comment.query.get(id)
 
