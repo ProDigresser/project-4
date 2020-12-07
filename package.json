@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "babel": "^6.23.0",
+    "file-loader": "^6.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-player": "^2.7.0",

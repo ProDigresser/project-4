@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-// import Logo from '../styles/Logo.jpg'
+import logo from '../styles/logo.jpg'
 
 const NavBar = (props) => {
 
@@ -13,14 +13,14 @@ const NavBar = (props) => {
 
   // Variables
 
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token') 
   const userId = localStorage.getItem('userId')
   const userName = localStorage.getItem('userName')
 
   // Content
 
   return <nav>
-    {/* <img src={Logo} alt="logo"/> */}
+    <img src={logo} alt="logo"/>
     <ul>
       <li>
         <Link className="navLink" to="/">Videos</Link>
