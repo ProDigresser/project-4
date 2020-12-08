@@ -6,7 +6,8 @@ import EditVideo from './src/components/EditVideo'
 import EditComment from './src/components/EditComment'
 import ReplyComment from './src/components/ReplyComment'
 import Home from './src/components/Home'
-import WebNavbar from './src/components/Navbar'
+import WebNavbar from './src/components/WebNavbar'
+import MobileNavbar from './src/components/MobileNavbar'
 import Signup from './src/components/Signup'
 import Video from './src/components/Video'
 import Login from './src/components/Login'
@@ -16,7 +17,8 @@ import UserProfile from './src/components/UserProfile'
 
 const App = () => (
   <BrowserRouter>
-    <WebNavbar />
+    <WebNavbar className="webNavbar" />
+    <MobileNavbar pageWrapId={'page-wrap'} outerContainerId={'App'} />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/signup" component={Signup} />

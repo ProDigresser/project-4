@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import logo from '../styles/logo.jpg'
 import HowTo from '../styles/HowTo.jpg'
 
-const NavBar = (props) => {
+const WebNavbar = (props) => {
 
   // Functions
 
@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
   // Content
 
-  return <div>
+  return <div className="WebNavbar">
     <nav>
       <ul>
         <img className="logo" src={logo} alt="logo" />
@@ -54,4 +54,4 @@ const NavBar = (props) => {
   </div>
 }
 
-export default withRouter(NavBar)
+export default withRouter(WebNavbar)
