@@ -8,13 +8,14 @@ const AddVideo = (props) => {
     description: '',
     vid_url: ''
   })
-  const inputFields = ['Title', 'Description', 'Vid URL']
+  const inputFields = ['title', 'description', 'vid_url']
 
   function handleChange(event) {
     const data = {
       ...formData,
       [event.target.name]: event.target.value
     }
+    console.log(data)
     updateFormData(data)
   }
   function handleSubmit(event) {
@@ -24,7 +25,7 @@ const AddVideo = (props) => {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
-        props.history.push('/videos')
+        props.history.push('/')
       })
   }
 

@@ -8,12 +8,16 @@ const EditVideo = (props) => {
     description: '',
     vid_url: ''
   })
-  const inputFields = ['Title', 'Description', 'Vid_url']
 
   useEffect(() => {
     axios.get(`/api/videos/${props.match.params.videoId}`)
       .then(resp => {
-        updateFormData(resp.data)
+        console.log(resp.data)
+        updateFormData({
+          title: resp.data.title,
+          description: resp.data.description,
+          vid_url: resp.data.vid_url
+        })
       })
   }, [])
 
@@ -32,25 +36,33 @@ const EditVideo = (props) => {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        props.history.push('/videos')
+        props.history.push('/')
       })
   }
 
   return <main className="mainEditVideo">
     <form onSubmit={handleSubmit}>
-      {inputFields.map(field => {
-        return <div key={field}>
-          <label>{field}</label>
-          <input
-            type="text"
-            onChange={handleChange}
-            value={formData[field]}
-            name={field}
-          />
-        </div>
-
-
-      })}
+      <label>Title</label>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={formData.title}
+        name="title"
+      />
+      <label>Description</label>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={formData.description}
+        name="description"
+      />
+      <label>Video URL</label>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={formData.vid_url}
+        name="vid_url"
+      />
       <button>Save</button>
     </form>
   </main>
