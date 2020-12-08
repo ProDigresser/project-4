@@ -328,6 +328,9 @@ nav {
     font-size: 20px;
   }
 }
+.mobileImage {
+  display:none;
+}
 
 //BURGER NAVBAR!
 
@@ -341,13 +344,14 @@ nav {
 //   /* Our sidebar item styling */
 //   text-decoration: none;
 //   margin-bottom: 10px;
-  color: #d1d1d1;
+  color: var(--light);
   transition: color 0.2s;
+  text-decoration: none;
 }
 
 /* Change color on hover */
 .bm-item:hover {
-  color: white;
+  color: var(--extraLight);
 }
 
 /* The rest copied directly from react-burger-menu docs */
@@ -363,7 +367,7 @@ nav {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: var(--light)
 }
 
 /* Position and sizing of clickable cross button */
@@ -372,34 +376,50 @@ nav {
   width: 24px;
 }
 
+
+
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: var(--light);
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  padding: 40%;
   font-size: 1.15em;
+  background-color: var(--dark)
+
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: var(--dark);
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: var(--light)
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+.mobileNavbar {
+  display: none;
+}
+
 @media screen and (max-width:600px) {
 .WebNavbar{
   display: none;
+}
+.mobileNavbar {
+  display: inline;
+}
+.mobileImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--dark);
 }
 }
