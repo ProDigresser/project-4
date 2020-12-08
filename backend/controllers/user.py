@@ -34,6 +34,7 @@ def user_index():
   users = User.query.all()
   return user_schema.jsonify(users, many=True), 200
 
+
 @router.route('/users/<int:id>', methods=['GET'])
 def user_single(id):
   user = User.query.get(id)

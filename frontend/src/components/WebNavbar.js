@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import logo from '../styles/logo.jpg'
 import HowTo from '../styles/HowTo.jpg'
 
-const NavBar = (props) => {
+const WebNavbar = (props) => {
 
   // Functions
 
@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
   // Content
 
-  return <div>
+  return <div className="WebNavbar">
     <nav>
       <ul>
         <img className="logo" src={logo} alt="logo" />
@@ -35,10 +35,7 @@ const NavBar = (props) => {
           <Link className="navLink" to="/">Videos</Link>
         </li>
         <li>
-          {localStorage.getItem('token') && <Link className="navLink" to="/videos/new-video">Add a Video</Link>}
-        </li>
-        <li>
-          {localStorage.getItem('token') && <Link className="navLink" to="/videos/edit-video">Edit a Video</Link>}
+          {localStorage.getItem('token') && <Link className="navLink" to="/add-video">Add a Video</Link>}
         </li>
         <li className="navLogout">
           {localStorage.getItem('token') && <button
@@ -54,4 +51,4 @@ const NavBar = (props) => {
   </div>
 }
 
-export default withRouter(NavBar)
+export default withRouter(WebNavbar)

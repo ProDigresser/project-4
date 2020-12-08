@@ -6,16 +6,19 @@ import EditVideo from './src/components/EditVideo'
 import EditComment from './src/components/EditComment'
 import ReplyComment from './src/components/ReplyComment'
 import Home from './src/components/Home'
-import Navbar from './src/components/Navbar'
+import WebNavbar from './src/components/WebNavbar'
+import MobileNavbar from './src/components/MobileNavbar'
 import Signup from './src/components/Signup'
 import Video from './src/components/Video'
 import Login from './src/components/Login'
 import AddVideo from './src/components/AddVideo'
 import './src/styles/styles.scss'
+import UserProfile from './src/components/UserProfile'
 
 const App = () => (
   <BrowserRouter>
-    <Navbar />
+    <WebNavbar className="webNavbar" />
+    <MobileNavbar className="mobileNavbar" pageWrapId={'page-wrap'} outerContainerId={'App'} />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/signup" component={Signup} />
@@ -26,8 +29,11 @@ const App = () => (
       <Route exact path ="/reply-comment/:commentId" component={ReplyComment} />
       <Route exact path="/videos/:videoId" component={Video} />
       <Route exact path="/users" component={Users} />
+      <Route exact path="/users/:userId" component={UserProfile} />
     </Switch>
   </BrowserRouter>
+
+
 )
 
 

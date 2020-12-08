@@ -17,7 +17,7 @@ const Users = (props) => {
     <div className="userCard">
       {userData.map((user, index) => {
         return <div key={index}>
-          <Link to={`/users/${user.username}`} >
+          <Link to={`/users/${user.id}`} >
             <h2>{user.username}</h2>
           </Link>
         </div>
