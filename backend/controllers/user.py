@@ -8,17 +8,6 @@ populate_user = PopulateUserSchema()
 
 router = Blueprint(__name__, 'users')
 
-
-@router.route('/users', methods=['GET'])
-def users_index():
-  users = User.query.all()
-  return user_schema.jsonify(users, many=True), 200
-
-@router.route('/users/<int:id>', methods=['GET'])
-def userProfile(id):
-  user = User.query.get(id)
-  return user_schema.jsonify(user, many=False), 200
-
 @router.route('/signup', methods=['POST'])
 def signup():
   request_body = request.get_json()
