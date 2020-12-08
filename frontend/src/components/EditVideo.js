@@ -36,7 +36,7 @@ const EditVideo = (props) => {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        props.history.push('/videos')
+        props.history.push('/')
       })
   }
 
