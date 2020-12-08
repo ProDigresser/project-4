@@ -155,7 +155,7 @@ const Video = (props) => {
     <div>
       {/* Edit Video */}
       {isCreator(video.user.id) && <div>
-        <Link to={`/videos/edit-video/${videoId}`}>Edit Video</Link>
+        <Link to={`/edit-video/${videoId}`}>Edit Video</Link>
         <button onClick={handleDelete}>Delete Video</button>
       </div>}
       {/* Video Content */}

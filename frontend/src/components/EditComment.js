@@ -10,7 +10,8 @@ const EditComment = (props) => {
   useEffect(() => {
     axios.get(`/api/comments/${props.match.params.commentId}`)
       .then(resp => {
-        updateFormData(resp.data)
+        console.log(resp.data.content)
+        updateFormData({ content: resp.data.content })
       })
   }, [])
 
@@ -23,6 +24,7 @@ const EditComment = (props) => {
   }
 
   function handlesSubmit(event) {
+    console.log(formData)
     event.preventDefault()
     const token = localStorage.getItem('token')
     axios.put(`/api/comments/${props.match.params.commentId}`, formData, {
