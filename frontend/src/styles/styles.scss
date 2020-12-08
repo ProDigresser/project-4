@@ -220,7 +220,28 @@ nav {
 
 }
 
+.button-container {
+  margin: 20px 5px 5px;
+  border: 2px var(--extraLight) solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10;
 
+  .genres-button.genre-option{
+    padding: 8px;
+    margin: 4px;
+    color: var(--grey);
+    background-color: var(--dark);
+    border-radius: 5px;
+    
+  }
+  .genres-button.genre-option.genre-button-active{
+    border: 2px var(--extraLight) solid;
+  }
+}
 
 
 .singleVideoMain {
