@@ -20,7 +20,7 @@ const MobileNavbar = (props) => {
   const userName = localStorage.getItem('userName')
 
   return <nav>
-    <Menu {...props}>
+    <Menu >
           
       <Link className="menu-item" to="/add-video">Add a Video</Link>
          
