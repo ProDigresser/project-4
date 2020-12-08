@@ -5,11 +5,14 @@ import HowTo from '../styles/HowTo.jpg'
 
 const WebNavbar = (props) => {
 
+  console.log(props)
+
   // Functions
 
   function handleLogout() {
     localStorage.removeItem('token')
     props.history.push('/')
+    window.location.reload()
   }
 
   // Variables
