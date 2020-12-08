@@ -13,6 +13,7 @@ class VideoSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   
   user_id = fields.Integer()
   user = fields.Nested('UserSchema', only=('id', 'username'))
+  genres = fields.Nested('GenreSchema', many=True)
     
 
 class PopulateVideoSchema(VideoSchema):
@@ -22,4 +23,4 @@ class PopulateVideoSchema(VideoSchema):
     load_only = ('user_id',)
 
   comments = fields.Nested('CommentSchema', many=True)
-  genres = fields.Nested('GenreSchema', many=True)
+  
