@@ -10,15 +10,26 @@ class UserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
     model = User
     load_instance = True
     exclude = ('password_hash',)
+    load_only = ('email', 'password', 'genres', 'following', 'videos')
+
+  password = fields.String(required=True)
+  genres = fields.Nested('GenreSchema', many=True)
+  videos = fields.Nested('VideoSchema', many=True, exclude=('user',))
+  following = fields.Nested('UserSchema', many=True, exclude=('updated_at', 'created_at',))
+
+
+class PopulateUserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
+
+  class Meta:
+    model = User
+    load_instance = True
+    exclude = ('password_hash',)
     load_only = ('email', 'password')
 
   password = fields.String(required=True)
-
-
-class PopulateUserSchema(UserSchema):
-
   genres = fields.Nested('GenreSchema', many=True)
   videos = fields.Nested('VideoSchema', many=True, exclude=('user',))
+  following = fields.Nested('UserSchema', many=True, exclude=('updated_at', 'created_at',))
 
   @validates_schema
   def check_passwords_match(self, data, **kwargs):
