@@ -18,7 +18,7 @@ import UserProfile from './src/components/UserProfile'
 const App = () => (
   <BrowserRouter>
     <WebNavbar className="webNavbar" />
-    <MobileNavbar pageWrapId={'page-wrap'} outerContainerId={'App'} />
+    <MobileNavbar className="mobileNavbar" pageWrapId={'page-wrap'} outerContainerId={'App'} />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/signup" component={Signup} />
@@ -32,6 +32,8 @@ const App = () => (
       <Route exact path="/users/:userId" component={UserProfile} />
     </Switch>
   </BrowserRouter>
+
+
 )
 
 
