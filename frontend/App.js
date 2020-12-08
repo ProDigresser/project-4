@@ -12,6 +12,7 @@ import Video from './src/components/Video'
 import Login from './src/components/Login'
 import AddVideo from './src/components/AddVideo'
 import './src/styles/styles.scss'
+import UserProfile from './src/components/UserProfile'
 
 const App = () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path ="/reply-comment/:commentId" component={ReplyComment} />
       <Route exact path="/videos/:videoId" component={Video} />
       <Route exact path="/users" component={Users} />
+      <Route exact path="/users/:userId" component={UserProfile} />
     </Switch>
   </BrowserRouter>
 )
