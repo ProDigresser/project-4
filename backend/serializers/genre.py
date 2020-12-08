@@ -16,4 +16,4 @@ class PopulateGenreSchema(GenreSchema):
     model= Genre
     load_instance = True
 
-  videos = fields.Nested('VideoSchema', many=True)
+  videos = fields.Nested('VideoSchema', many=True, exclude=('genres',))
