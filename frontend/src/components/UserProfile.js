@@ -22,28 +22,38 @@ const UserProfile = (props) => {
     </div>
   }
 
-  return <main>
+  return <main className="profileMain">
+
     <h1>{user.username}</h1>
-    {console.log(user.genres)}
-    <div className="interests">
-      {user.genres.map((genre, index) => {
-        return <div key={index}>
-          <p>{genre.name}</p>
+    <div className="bio">
+      <div className="bioContainer">
+        <h4>Interests:</h4>
+        {console.log(user.genres)}
+        <div className="interests">
+          {user.genres.map((genre, index) => {
+            return <div key={index}>
+              <p>{genre.name}</p>
+            </div>
+          })}
         </div>
-      })}
+      </div>
     </div>
-    <div className="userVideos">
-      {user.videos.map((video, index) => {
-        return <div className="videoCard" key={index}>
-          <h3>{video.title}</h3>
-          <ReactPlayer className="singleThumbnail"
-            url={video.vid_url}
-            width={600}
-            height={400}
-          />
-          <p>{video.description}</p>
-        </div>
-      })}
+    <div className="headerVids">
+      <h2>{user.username}'s videos</h2>
+      <div className="userVideos">
+        {user.videos.map((video, index) => {
+          return <div className="videoCard" key={index}>
+            <h3>{video.title}</h3>
+            <ReactPlayer className="singleThumbnail"
+              url={video.vid_url}
+              width={250}
+              height={150}
+            />
+            <p>{video.description}</p>
+
+          </div>
+        })}
+      </div>
     </div>
   </main>
 

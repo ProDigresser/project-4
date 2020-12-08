@@ -334,29 +334,17 @@ nav {
 
 //BURGER NAVBAR!
 
-
-
-
-/* Individual item */
 .bm-item {
-//   display: inline-block;
-
-//   /* Our sidebar item styling */
-//   text-decoration: none;
-//   margin-bottom: 10px;
   color: var(--light);
   transition: color 0.2s;
   text-decoration: none;
 }
 
-/* Change color on hover */
 .bm-item:hover {
   color: var(--extraLight);
 }
 
-/* The rest copied directly from react-burger-menu docs */
 
-/* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -365,12 +353,12 @@ nav {
   top: 36px;
 }
 
-/* Color/shape of burger icon bars */
+
 .bm-burger-bars {
   background: var(--light)
 }
 
-/* Position and sizing of clickable cross button */
+
 .bm-cross-button {
   height: 24px;
   width: 24px;
@@ -378,12 +366,12 @@ nav {
 
 
 
-/* Color/shape of close button cross */
+
 .bm-cross {
   background: var(--light);
 }
 
-/* General sidebar styles */
+
 .bm-menu {
   padding: 40%;
   font-size: 1.15em;
@@ -391,17 +379,16 @@ nav {
 
 }
 
-/* Morph shape necessary with bubble or elastic */
+
 .bm-morph-shape {
   fill: var(--dark);
 }
 
-/* Wrapper for item list */
+
 .bm-item-list {
   color: var(--light)
 }
 
-/* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -409,6 +396,72 @@ nav {
   display: none;
 }
 
+//user profile page
+
+.profileMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1, h2 {
+    text-decoration: underline;
+    color: var(--light);
+  }
+  h4, p, h3{
+    color: var(--grey);
+  }
+  .bio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .interests {
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  }
+  .bioContainer {
+    box-shadow: 0 0 8px var(--dark);
+    border-radius: 3%;
+    border-radius: 10%;
+
+  }
+  .userVideos {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    p{
+      width: 300px;
+    }
+  }
+  .videoCard {
+    height: 300px;
+    border-radius: 3%;
+    box-shadow: 0 0 8px var(--grey);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+  }
+  .headerVids {
+    display:flex;
+    flex-direction: column;
+  }
+
+  
+}
+
+//Mobile responsive 
 @media screen and (max-width:600px) {
 .WebNavbar{
   display: none;
