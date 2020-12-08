@@ -7,7 +7,7 @@ import { slide as Menu } from 'react-burger-menu'
 const MobileNavbar = (props) => {
 
   // Functions
-
+  console.log(props)
   function handleLogout() {
     localStorage.removeItem('token')
     props.history.push('/')
@@ -19,25 +19,29 @@ const MobileNavbar = (props) => {
   const userId = localStorage.getItem('userId')
   const userName = localStorage.getItem('userName')
 
+  
+
   return <nav>
-    <Menu {...props}>
+    <Menu>
+
+      
           
-      <Link className="menu-item" to="/add-video">Add a Video</Link>
+      {token && <Link className="menu-item" to="/add-video">Add a Video</Link>}
          
       <Link className="menu-item" to="/">Videos</Link>
      
-      <Link className="menu-item" to="/login">Log In</Link>
+      {!token && <Link className="menu-item" to="/login">Log In</Link>}
 
-      <Link className="menu-item" to="/signup">Sign Up</Link>
+      {!token && <Link className="menu-item" to="/signup">Sign Up</Link>}
 
-      <button className="menu-item"
+      {token && <button className="menu-item"
         onClick={handleLogout}>
         Log Out
-      </button>
+      </button>}
 
     </Menu>
   </nav>
 }
 
-export default MobileNavbar
+export default withRouter(MobileNavbar)
 
