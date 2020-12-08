@@ -24,7 +24,9 @@ const Login = (props) => {
         localStorage.setItem('token', resp.data.token)
         localStorage.setItem('userId', resp.data.user_id)
         localStorage.setItem('userName', resp.data.username)
+
         props.history.push('/')
+        window.location.reload()
       })
   }
 
