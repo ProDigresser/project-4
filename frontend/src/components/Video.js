@@ -164,8 +164,8 @@ const Video = (props) => {
         <ReactPlayer className="singleThumbnail"
           url={video.vid_url}
           fluid={false}
-          width={600}
-          height={400}
+          width="80%"
+          height="100%"
         />
       </div>
       <p className="videoDescription">{video.description}</p>
@@ -197,7 +197,7 @@ const Video = (props) => {
               </Link>
               <p className="commentContent">{comment.content}</p>
               {isCreator(comment.user.id) && <div>
-                <Link to={`/edit-comment/${videoId}/${comment.id}`}>
+                <Link className="editComment" to={`/edit-comment/${videoId}/${comment.id}`}>
                   Edit Comment
                 </Link>
                 <button onClick={() => handleDeleteComment(comment.id)}>Delete Comment</button>
@@ -220,7 +220,7 @@ const Video = (props) => {
               }
 
               {/* Post a reply */}
-              <p onClick={() => showReplyBox(comment.id)}>Reply</p>
+              <p className="reply" onClick={() => showReplyBox(comment.id)}>Reply</p>
               {replyBox.isReply && replyBox.clickedComment === comment.id ? <form
                 onSubmit={handlesSubmit}
               >
