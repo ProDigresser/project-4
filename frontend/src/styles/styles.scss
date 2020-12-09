@@ -329,9 +329,27 @@ nav {
     font-size: 20px;
   }
 }
+
+//users page
+.usersMain {
+  .userName {
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding:30px;
+    margin: 5% 30%;
+    box-shadow: 0 0 8px var(--extraLight);
+  }
+  .userLink {
+    text-decoration: none;
+    color: var(--grey)
+  }
+
+}
+
 .mobileImage {
   display:none;
 }
+
 
 //BURGER NAVBAR!
  
