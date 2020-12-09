@@ -12,6 +12,7 @@ import Signup from './src/components/Signup'
 import Video from './src/components/Video'
 import Login from './src/components/Login'
 import AddVideo from './src/components/AddVideo'
+import Footer from './src/components/Footer'
 import './src/styles/styles.scss'
 import UserProfile from './src/components/UserProfile'
 
@@ -31,6 +32,7 @@ const App = () => (
       <Route exact path="/users" component={Users} />
       <Route exact path="/users/:userId" component={UserProfile} />
     </Switch>
+    <Footer />
   </BrowserRouter>
 
 

@@ -24,7 +24,7 @@ const WebNavbar = (props) => {
   // Content
 
   return <div className="WebNavbar">
-    <nav>
+    <nav className="WebNavbar">
       <ul>
         <img className="logo" src={logo} alt="logo" />
         <img className="image" src={HowTo} alt="howto" />

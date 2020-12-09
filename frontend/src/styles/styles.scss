@@ -27,8 +27,9 @@ body {
 }
 
 nav {
-  margin: 0;
+  margin-bottom: 40px;
   background-color: var(--dark);
+  padding:20px;
   
   button, .navLink {
     text-decoration: none;
@@ -59,7 +60,7 @@ nav {
     
       height: 45px;
       width: 150px;
-      margin: 10px;
+      margin-top: 10px;
       font-family: var(--font);
       font-size: 16px;
       border-radius: 4px;
@@ -460,7 +461,21 @@ nav {
 
   
 }
-
+footer {
+  background-color: var(--dark);
+  margin-top: 40px;
+  color: var(--grey);
+  padding:10px;
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  img {
+    margin: 20px;
+  }
+}
 //Mobile responsive 
 @media screen and (max-width:600px) {
 .WebNavbar{
