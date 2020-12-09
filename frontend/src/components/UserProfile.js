@@ -6,21 +6,53 @@ import { Link } from 'react-router-dom'
 
 
 const UserProfile = (props) => {
-  console.log(props.match.params)
   const userId = props.match.params.userId
   const [user, updateUser] = useState({})
+  const [videos, updateVideos] = useState([])
 
   useEffect(() => {
     axios.get(`/api/users/${userId}`)
       .then(resp => {
-        console.log(resp.data)
         updateUser(resp.data)
       })
   }, [])
 
+  useEffect(() => {
+    axios.get('/api/videos')
+      .then(resp => {
+        updateVideos(resp.data)
+      })
+
+  }, [])
+
+  console.log(videos)
+  console.log(user)
+
+  function filterVideos() {
+
+    const filteredVideos = videos.filter(video => {
+      
+      return video.genres.find(o => o.name === user.genres[0].name)
+       || video.genres.find(o => o.name === user.genres[1].name)
+       || video.genres.find(o => o.name === user.genres[2].name)
+    })
+
+    console.log
+    return filteredVideos
+  }
+
+
+
   if (!user.genres) {
     return <div>
       <h2>Loading...</h2>
+    </div>
+  }
+
+  if (!videos[1]) {
+    return <div>
+      <h2>Loading...</h2>
+      <progress max='100'>60%</progress>
     </div>
   }
 
@@ -32,7 +64,6 @@ const UserProfile = (props) => {
     <div className="bio">
       <div className="bioContainer">
         <h4>Interests:</h4>
-        {console.log(user.genres)}
         <div className="interests">
           {user.genres.map((genre, index) => {
             return <div key={index}>
@@ -57,6 +88,32 @@ const UserProfile = (props) => {
 
           </div>
         })}
+      </div>
+    </div>
+    {/* Suggested Videos */}
+    <div className="homeMain">
+      <h2>Suggested for {user.username} based on Interests</h2>
+      <div className="videoCards">
+        {filterVideos().map((video, index) => {
+          // console.log(video.vid_url.slice(17))
+          return <div key={index}>
+            <div className="cardOuter">
+              <Link className="thumbnail"
+                to={`/videos/${video.id}`}
+                style={{ backgroundImage: `url(http://i3.ytimg.com/vi/${video.vid_url.slice(17)}/hqdefault.jpg)` }}
+              ></Link>
+              <div className="descriptionContainer">
+                <Link className="vidLink" to={`/videos/${video.id}`}>
+                  <h2>{video.title}</h2>
+                  <p>{video.description}</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        })}
+      </div>
+      <div>
+
       </div>
     </div>
   </main>
