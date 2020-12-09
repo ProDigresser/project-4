@@ -80,6 +80,7 @@ def update_user_genre():
 
   existing_user = User.query.get(g.current_user.id)
 
+
   print(req)
   try:
     user = populate_user.load(
