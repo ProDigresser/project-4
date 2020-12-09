@@ -164,8 +164,8 @@ const Video = (props) => {
         <ReactPlayer className="singleThumbnail"
           url={video.vid_url}
           fluid={false}
-          width={600}
-          height={400}
+          width="80%"
+          height="100%"
         />
       </div>
       <p className="videoDescription">{video.description}</p>
