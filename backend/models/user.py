@@ -57,8 +57,6 @@ class User(db.Model, BaseModel):
   def validate_username(self, key, username):
     if not username:
       raise AssertionError('No username provided')
-    if User.query.filter(User.username == username).first():
-      raise AssertionError('Username is already in use')
     if len(username) < 2 or len(username) > 20:
       raise AssertionError('Username must be between 3 and 20 characters') 
     return username 

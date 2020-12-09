@@ -12,6 +12,7 @@ class UserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
     exclude = ('password_hash',)
     load_only = ('email', 'password', 'genres', 'following', 'videos')
 
+  username = fields.String(required=True)
   password = fields.String(required=True)
   genres = fields.Nested('GenreSchema', many=True)
   videos = fields.Nested('VideoSchema', many=True, exclude=('user',))
