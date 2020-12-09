@@ -56,8 +56,8 @@ def update_user_follow():
   existing_user = User.query.get(g.current_user.id)
 
   # mapped_users
-  mapped_following_ids = [{'id':user.id} for user in [*existing_user.following]]
-  req['following'] = [*mapped_following_ids, *req['following']]
+  # mapped_following_ids = [{'id':user.id} for user in [*existing_user.following]]
+  # req['following'] = [*mapped_following_ids, *req['following']]
 
   try:
     user = populate_user.load(

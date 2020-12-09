@@ -245,7 +245,6 @@ nav {
   }
 }
 
-
 .singleVideoMain {
   display: flex;
   flex-direction: column;
@@ -339,13 +338,35 @@ nav {
     padding:30px;
     margin: 5% 30%;
     box-shadow: 0 0 8px var(--extraLight);
+
+
   }
+
+  h3 {
+    color: var(--light);
+  }
+  .follow-button {
+    border: 4px var(--grey) solid;
+    border-radius: 8px;
+    background: var(--grey);
+    width: 170px;
+    height:40px;
+  }
+  .follow-button:focus {
+    outline: none;
+  }
+  .follow-button.button-is-active {
+    border: 4px var(--extraLight) solid;
+  }
+
+  
   .userLink {
     text-decoration: none;
     color: var(--grey)
   }
 
 }
+
 
 .mobileImage {
   display:none;
