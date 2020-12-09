@@ -14,7 +14,7 @@ def signup():
   request_body = request.get_json()
   user = populate_user.load(request_body)
   user.save()
-  return populate_user.jsonify(user), 200
+  return { 'message': 'Confirmed' }, 200
 
 @router.route('/login', methods=['POST'])
 def login():
@@ -24,8 +24,11 @@ def login():
   if not user:
     return { 'message': 'Unauthorized' }, 401
 
+  if not user.validate_password(data['password']):
+    return { 'message': 'Invalid Username or password.' }, 402
+
   token = user.generate_token()
-  print(user)
+
   return{ 'token': token, 'username':user.username, 'user_id':user.id, 'message': 'Welcome back!'}
 
 
@@ -76,19 +79,6 @@ def update_user_genre():
   req = request.get_json()
 
   existing_user = User.query.get(g.current_user.id)
-
-  # mapped_users
-  try:
-    mapped_genre_ids = [{'id':genre.id} for genre in [*existing_user.genres]]
-    req['genres'] = [*mapped_genre_ids, *req['genres']]
-  except:
-    pass
-
-  try:
-    mapped_following_ids = [{'id':user.id} for user in [*existing_user.following]]
-    req['following'] = [*mapped_following_ids, *req['following']]
-  except:
-    pass
 
   print(req)
   try:

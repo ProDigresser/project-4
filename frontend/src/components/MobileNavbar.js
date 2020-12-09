@@ -26,7 +26,7 @@ const MobileNavbar = (props) => {
       <img src={HowTo} height={100} alt="logo"/>
     </section>
     <nav>
-      <Menu>
+      <Menu width={ 180 }>
 
         {token && <Link className="menu-item" to="/add-video">Add a Video</Link>}
 

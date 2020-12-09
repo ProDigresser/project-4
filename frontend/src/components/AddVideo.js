@@ -30,7 +30,6 @@ const AddVideo = (props) => {
       })
   }
 
-
   const genres = [[1, 'Animation'],
   [2, 'Writing'],
   [3, 'Film & Video'],

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import logo from '../styles/logo.jpg'
 
 const Users = (props) => {
   const [userData, updateUserData] = useState([])
@@ -16,8 +16,9 @@ const Users = (props) => {
   return <main className="usersMain">
     <div className="userCard">
       {userData.map((user, index) => {
-        return <div key={index}>
-          <Link to={`/users/${user.id}`} >
+        return <div className="userName" key={index}>
+          <img src={logo} height={50} />
+          <Link className="userLink" to={`/users/${user.id}`} >
             <h2>{user.username}</h2>
           </Link>
         </div>
