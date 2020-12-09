@@ -7,7 +7,7 @@ import { bubble as Menu } from 'react-burger-menu'
 const MobileNavbar = (props) => {
 
   // Functions
-  console.log(props)
+
   function handleLogout() {
     localStorage.removeItem('token')
     props.history.push('/')

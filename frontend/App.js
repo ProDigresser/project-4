@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Users from './src/components/Users'
 import EditVideo from './src/components/EditVideo'
 import EditComment from './src/components/EditComment'
+import EditUser from './src/components/EditUser'
 import ReplyComment from './src/components/ReplyComment'
 import Home from './src/components/Home'
 import WebNavbar from './src/components/WebNavbar'
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/add-video" component={AddVideo} />
       <Route exact path ="/edit-video/:videoId" component={EditVideo} />
+      <Route exact path ="/edit-user/:userId" component={EditUser} />
       <Route exact path ="/edit-comment/:videoId/:commentId" component={EditComment} />
       <Route exact path ="/reply-comment/:commentId" component={ReplyComment} />
       <Route exact path="/videos/:videoId" component={Video} />
