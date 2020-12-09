@@ -78,7 +78,7 @@ const UserProfile = (props) => {
       <div className="userVideos">
         {user.videos.map((video, index) => {
           return <div className="videoCard" key={index}>
-            <Link to={`/videos/${video.id}`}>{video.title}</Link>
+            <Link className="navLink" to={`/videos/${video.id}`}>{video.title}</Link>
             <ReactPlayer className="singleThumbnail"
               url={video.vid_url}
               width={250}
@@ -93,7 +93,7 @@ const UserProfile = (props) => {
     {/* Suggested Videos */}
     <div className="homeMain">
       <h2>Suggested for {user.username} based on Interests</h2>
-      <div className="videoCards">
+      <div className="userVideos">
         {filterVideos().map((video, index) => {
           // console.log(video.vid_url.slice(17))
           return <div key={index}>
@@ -102,8 +102,8 @@ const UserProfile = (props) => {
                 to={`/videos/${video.id}`}
                 style={{ backgroundImage: `url(http://i3.ytimg.com/vi/${video.vid_url.slice(17)}/hqdefault.jpg)` }}
               ></Link>
-              <div className="descriptionContainer">
-                <Link className="vidLink" to={`/videos/${video.id}`}>
+              <div className="suggestedDescription">
+                <Link className="navLink" to={`/videos/${video.id}`}>
                   <h2>{video.title}</h2>
                   <p>{video.description}</p>
                 </Link>

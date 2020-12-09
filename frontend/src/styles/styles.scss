@@ -270,7 +270,6 @@ nav {
     margin-right: 5%;
     padding:3%;
     border-radius: 10px;
-    
   }
   .singleThumbnail{
     width:10%;
@@ -486,19 +485,21 @@ nav {
   align-items: center;
   justify-content: space-evenly;
   width: 200px;
+
   }
   .bioContainer {
     box-shadow: 0 0 8px var(--dark);
     border-radius: 3%;
     border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
 
   }
   .userVideos {
-    
+  
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     
     p{
@@ -509,18 +510,38 @@ nav {
     height: 300px;
     border-radius: 3%;
     box-shadow: 0 0 8px var(--grey);
+    background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-items: center;
+    justify-items: space-between;
+    .navLink{
+      color: var(--dark);
+      text-decoration: none;
+      margin: 20px;
+      background-color: var(--light);
+      padding: 1%;
+      border-radius: 10px;
+    }
   }
   .headerVids {
+    
     display:flex;
     flex-direction: column;
   }
-
+  h2{
+    
+    margin-top: 100px;
+  }
+  .cardOuter{
+    width:300px;
+    border-radius: 10px;
+  }
   
+  .suggestedDescription{
+    margin-top: -100px;
+  }
 }
 footer {
   background-color: var(--dark);
