@@ -12,12 +12,49 @@ const EditUser = (props) => {
   useEffect(() => {
     axios.get(`/api/users/${props.match.params.userId}`)
       .then(resp => {
-        console.log(resp.data)
+        const data = resp.data
         updateFormData({
-          username: resp.data.username,
-          genres: []
+          username: data.username,
+          genres: data.genres
         })
-        
+        data.genres.map(genre => {
+          if (genre.name === 'Animation'){
+            animationUpdate('genre-button-active')
+          }
+          if (genre.name === 'Writing'){
+            writingUpdate('genre-button-active')
+          }
+          if (genre.name === 'Film & Video'){
+            filmUpdate('genre-button-active')
+          }
+          if (genre.name === 'Productivity'){
+            prodUpdate('genre-button-active')
+          }
+          if (genre.name === 'Graphic Design'){
+            graphicUpdate('genre-button-active')
+          }
+          if (genre.name === 'Art & Illustration'){
+            artUpdate('genre-button-active')
+          }
+          if (genre.name === 'Music'){
+            musicUpdate('genre-button-active')
+          }
+          if (genre.name === 'Photography'){
+            photographyUpdate('genre-button-active')
+          }
+          if (genre.name === 'UI/UX Design'){
+            designUpdate('genre-button-active')
+          }
+          if (genre.name === 'Web Development'){
+            webUpdate('genre-button-active')
+          }
+          if (genre.name === 'Cooking'){
+            cookingUpdate('genre-button-active')
+          }
+          if (genre.name === 'Lifestyle'){
+            lifeUpdate('genre-button-active')
+          }
+        })
 
       })
   }, [])
