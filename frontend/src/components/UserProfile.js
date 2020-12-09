@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
+import { isCreator } from '../lib/authentication'
+import { Link } from 'react-router-dom'
 
 
 const UserProfile = (props) => {
@@ -23,7 +25,9 @@ const UserProfile = (props) => {
   }
 
   return <main className="profileMain">
-
+    {isCreator(user.id) && <div>
+      <Link to={`/edit-user/${userId}`}>Edit Profile</Link>
+    </div>}
     <h1>{user.username}</h1>
     <div className="bio">
       <div className="bioContainer">
@@ -43,7 +47,7 @@ const UserProfile = (props) => {
       <div className="userVideos">
         {user.videos.map((video, index) => {
           return <div className="videoCard" key={index}>
-            <h3>{video.title}</h3>
+            <Link to={`/videos/${video.id}`}>{video.title}</Link>
             <ReactPlayer className="singleThumbnail"
               url={video.vid_url}
               width={250}
