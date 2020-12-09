@@ -334,11 +334,14 @@ nav {
 }
 
 //BURGER NAVBAR!
+ 
 
 .bm-item {
+ 
   color: var(--light);
   transition: color 0.2s;
   text-decoration: none;
+  padding: 10px;
 }
 
 .bm-item:hover {
@@ -364,9 +367,11 @@ nav {
   height: 24px;
   width: 24px;
 }
-
-
-
+#page-wrap {
+ 
+  text-align: center;
+  overflow: auto;
+}
 
 .bm-cross {
   background: var(--light);
@@ -374,10 +379,11 @@ nav {
 
 
 .bm-menu {
+  
   padding: 40%;
   font-size: 1.15em;
-  background-color: var(--dark)
-
+  background-color: var(--dark);
+  overflow: hidden;
 }
 
 
@@ -387,15 +393,32 @@ nav {
 
 
 .bm-item-list {
-  color: var(--light)
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden;
+  color: var(--light);
+  background-color: var(--dark);
+  width: inherit;
+ 
 }
 
 .bm-overlay {
+  height:100vh;
   background: rgba(0, 0, 0, 0.3);
+  
+  width: 10px;
 }
+.burgerNav {
+  display: none;
+}
+// ***************
+
 .mobileNavbar {
   display: none;
 }
+
+
+
 
 //user profile page
 
