@@ -52,9 +52,11 @@ const WebNavbar = (props) => {
         </li>
       </ul>
     </nav>
-    {/* <p>
-      {localStorage.getItem('token') && <span>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></span>}
-    </p> */}
+    <div className="welcomeWrapper">
+      <p className="welcomeBack">
+        {localStorage.getItem('token') && <span>Welcome back <Link className="welcomeBackName" to={`/users/${userId}`}>{userName}</Link></span>}
+      </p>
+    </div>
   </div>
 }
 
