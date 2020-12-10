@@ -25,22 +25,12 @@ const UserProfile = (props) => {
 
   function filterVideos() {
 
-    // const filteredVideos = videos.filter(video => {
-      
-    //   return video.genres.find(o => o.name === user.genres[0].name)
-    //    || video.genres.find(o => o.name === user.genres[1].name)
-    //    || video.genres.find(o => o.name === user.genres[2].name)
-    // })
-
-    // console.log
-    // return filteredVideos
-  
     const userGenres = user.genres.map(({ name }) => name)
-  
+
     return videos.filter(video => (
       video.genres.some(({ name }) => userGenres.includes(name))
     ))
-  
+
   }
 
 
@@ -94,12 +84,11 @@ const UserProfile = (props) => {
         })}
       </div>
     </div>
-    {/* Suggested Videos */}
+
     <div className="homeMain">
       <h2>Suggested for {user.username} based on Interests</h2>
       <div className="userVideos">
         {filterVideos().map((video, index) => {
-          // console.log(video.vid_url.slice(17))
           return <div key={index}>
             <div className="cardOuter">
               <Link className="thumbnail"
@@ -116,8 +105,27 @@ const UserProfile = (props) => {
           </div>
         })}
       </div>
-      <div>
+      <div className="headerVids">
+        <h2>Videos fromm people you follow</h2>
+        <div className="userVideos">
+          {user.following.map((user) => {
+            return user.videos.map(video => {
+              return <div className="videoCard" key={video.title}>
+                <Link className="navLink" to={`/videos/${video.id}`}>{video.title}</Link>
+                <ReactPlayer className="singleThumbnail"
+                  url={video.vid_url}
+                  width={250}
+                  height={150}
+                />
+                <p>{video.description}</p>
 
+              </div>
+            })
+
+
+
+          })}
+        </div>
       </div>
     </div>
   </main>

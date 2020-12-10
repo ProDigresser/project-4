@@ -30,7 +30,7 @@ class PopulateUserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   password = fields.String(required=True)
   genres = fields.Nested('GenreSchema', many=True)
   videos = fields.Nested('VideoSchema', many=True, exclude=('user',))
-  following = fields.Nested('UserSchema', many=True, exclude=('updated_at', 'created_at', 'genres', 'videos'))
+  following = fields.Nested('UserSchema', many=True, exclude=('updated_at', 'created_at', 'genres',))
 
   @validates_schema
   def check_passwords_match(self, data, **kwargs):
