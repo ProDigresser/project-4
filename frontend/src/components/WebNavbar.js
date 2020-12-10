@@ -41,6 +41,9 @@ const WebNavbar = (props) => {
         <li>
           {localStorage.getItem('token') && <Link className="navLink" to="/users">Users</Link>}
         </li>
+        <li>
+          {localStorage.getItem('token') && <Link className="navLink" to={`/users/${userId}`}>My Profile</Link>}
+        </li>
         <li className="navLogout">
           {localStorage.getItem('token') && <button
             onClick={handleLogout}>
@@ -49,9 +52,9 @@ const WebNavbar = (props) => {
         </li>
       </ul>
     </nav>
-    <p>
+    {/* <p>
       {localStorage.getItem('token') && <span>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></span>}
-    </p>
+    </p> */}
   </div>
 }
 

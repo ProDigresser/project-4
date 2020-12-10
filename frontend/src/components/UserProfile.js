@@ -15,15 +15,12 @@ const UserProfile = (props) => {
       .then(resp => {
         updateUser(resp.data)
       })
-  }, [])
-
-  useEffect(() => {
     axios.get('/api/videos')
       .then(resp => {
         updateVideos(resp.data)
       })
 
-  }, [])
+  }, [props.match])
 
 
   function filterVideos() {

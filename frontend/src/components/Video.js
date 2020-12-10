@@ -208,7 +208,7 @@ const Video = (props) => {
 
               {comment.nested_comments && comment.nested_comments.map(nested_comment => {
                 return <div className="commentUser" key={nested_comment.id}>
-                  <Link className="userLink" to={`/users/${nested_comment.user.id}`}>
+                  <Link className="userLink" to={`/users${nested_comment.user.id}`}>
                     {nested_comment.user.username}
                   </Link>
                   <p className="commentContent">{nested_comment.nested_content}</p>
