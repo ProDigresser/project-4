@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import logo from '../styles/logo.jpg'
 import HowTo from '../styles/HowTo.jpg'
 import { bubble as Menu } from 'react-burger-menu'
 

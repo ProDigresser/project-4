@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import logo from '../styles/logo.jpg'
+import logo from '../styles/howtologo.jpg'
 
 const Users = (props) => {
   const [userData, updateUserData] = useState([])

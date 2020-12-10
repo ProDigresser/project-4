@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import logo from '../styles/logo.jpg'
+import logo from '../styles/howtologo.jpg'
 import HowTo from '../styles/HowTo.jpg'
 
 const WebNavbar = (props) => {
