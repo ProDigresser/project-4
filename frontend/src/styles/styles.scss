@@ -75,10 +75,23 @@ nav {
   
 }
 }
+.welcomeWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .welcomeBack{
+    justify-content: center;
     text-decoration: none;
-
-  color: var(--grey);
+    color: var(--grey);
+    background-color: rgba(37, 248, 248, 0.055);
+    width: 20vw;
+    padding: 10px;
+    border-radius:10px;
+    .welcomeBackName {
+      text-decoration: none;
+    color: var(--grey);
+    }
 }
 
 
@@ -493,7 +506,19 @@ nav {
     border-radius: 3%;
     border-radius: 10%;
     background-color: rgba(0, 0, 0, 0.2);
-
+    margin-bottom: 30px;
+  }
+  .editProfile {
+   background-color: rgba(0, 0, 0, 0.2);
+   padding:5px;
+   border-radius: 10px;
+   text-decoration: none;
+   font-size: 12px;
+   color: var(--light);
+   margin-bottom: 100px;
+  }
+  .editContainer {
+    margin-bottom: 60px;
   }
   .userVideos {
   
@@ -534,10 +559,12 @@ nav {
     }
   }
   .headerVids {
-    
+    margin-bottom: 50px;
     display:flex;
     flex-direction: column;
+    border-top: 1px solid var(--light);
   }
+  
   h2{
     margin-top: 100px;
   }
@@ -549,6 +576,10 @@ nav {
   
   .suggestedDescription{
     margin-top: -100px;
+  }
+  .homeMain {
+    
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 footer {

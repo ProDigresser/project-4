@@ -62,9 +62,7 @@ const UserProfile = (props) => {
   }
 
   return <main className="profileMain">
-    {isCreator(user.id) && <div>
-      <Link to={`/edit-user/${userId}`}>Edit Profile</Link>
-    </div>}
+
     <h1>{user.username}</h1>
     <div className="bio">
       <div className="bioContainer">
@@ -78,6 +76,10 @@ const UserProfile = (props) => {
         </div>
       </div>
     </div>
+    {isCreator(user.id) && <div className="editContainer">
+      <Link className="editProfile" to={`/edit-user/${userId}`}>Edit Profile</Link>
+    </div>}
+
     <div className="headerVids">
       <h2>{user.username}'s videos</h2>
       <div className="userVideos">
