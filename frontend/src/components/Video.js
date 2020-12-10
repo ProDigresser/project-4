@@ -153,12 +153,9 @@ const Video = (props) => {
   // Content
 
   return <main className="singleVideoMain">
-    <div>
-      {/* Edit Video */}
-      {isCreator(video.user.id) && <div>
-        <Link to={`/edit-video/${videoId}`}>Edit Video</Link>
-        <button onClick={handleDelete}>Delete Video</button>
-      </div>}
+    <div >
+      
+
       {/* Video Content */}
       <h2 className="videoTitle">{video.title}</h2>
       <div className="thumbnailDescription">
@@ -170,6 +167,11 @@ const Video = (props) => {
         />
       </div>
       <p className="videoDescription">{video.description}</p>
+      {/* Edit Video */}
+      {isCreator(video.user.id) && <div className="navLink">
+        <Link className="editLink" to={`/edit-video/${videoId}`}>Edit Video</Link>
+        <button onClick={handleDelete}>Delete Video</button>
+      </div>}
 
       {/* New Comment */}
 

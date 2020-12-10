@@ -283,6 +283,17 @@ nav {
  flex-direction: column;
  align-items: center;
 
+ 
+
+ .editLink {
+  text-decoration: none;
+  color: var(--grey);
+  background-color: var(--mid);
+  padding: 6px;
+  border: solid 2px var(--light);
+  border-radius: 10px;
+ }
+
  .thumbnailDescription {
    display:flex;
    flex-direction: column;
@@ -319,6 +330,7 @@ nav {
     background-color: rgba(37, 248, 248, 0.055);
     border-radius: 10px;
     border-style: inset;
+    margin-top: 50px;
   }
   form{
     display: flex;
