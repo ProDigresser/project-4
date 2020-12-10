@@ -38,6 +38,9 @@ const WebNavbar = (props) => {
         <li>
           {localStorage.getItem('token') && <Link className="navLink" to="/add-video">Add a Video</Link>}
         </li>
+        <li>
+          {localStorage.getItem('token') && <Link className="navLink" to="/users">Users</Link>}
+        </li>
         <li className="navLogout">
           {localStorage.getItem('token') && <button
             onClick={handleLogout}>
