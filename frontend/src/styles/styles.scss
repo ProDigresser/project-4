@@ -27,7 +27,8 @@ body {
 }
 
 nav {
-  margin-bottom: 40px;
+  width: 104vw;
+  margin: 20px;
   background-color: var(--dark);
   padding:20px;
   
@@ -528,7 +529,8 @@ nav {
     }
   }
   .videoCard {
-    height: 300px;
+
+    height: 350px;
     border-radius: 3%;
     box-shadow: 0 0 8px var(--grey);
     background-color: rgba(0, 0, 0, 0.2);
@@ -536,7 +538,13 @@ nav {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-items: space-between;
+    justify-items: space-evenly;
+    width: 300px;
+    margin:10px;
+    p{
+      width:90%
+    }
+
     .navLink{
       color: var(--dark);
       text-decoration: none;
@@ -552,10 +560,10 @@ nav {
     flex-direction: column;
   }
   h2{
-    
     margin-top: 100px;
   }
   .cardOuter{
+    background-color: rgba(0, 225, 255, 0.192);
     width:300px;
     border-radius: 10px;
   }
@@ -580,12 +588,12 @@ footer {
   }
 }
 //Mobile responsive 
-@media screen and (max-width:600px) {
+@media screen and (max-width:680px) {
 .WebNavbar{
   display: none;
 }
 .mobileNavbar {
-  display: inline;
+  display: inherit;
 }
 .mobileImage {
   display: flex;

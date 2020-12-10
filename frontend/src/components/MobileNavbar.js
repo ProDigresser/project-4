@@ -22,12 +22,10 @@ const MobileNavbar = (props) => {
 
 
   return <div className="mobileNavbar">
-    <section className="mobileImage">
-      <img src={HowTo} height={100} alt="logo"/>
-    </section>
+  
     <nav>
+    <img src={HowTo} height={150} alt="logo"/>
       <Menu width={ 180 }>
-
         {token && <Link className="menu-item" to="/add-video">Add a Video</Link>}
 
         <Link className="menu-item" to="/">Videos</Link>
@@ -40,7 +38,6 @@ const MobileNavbar = (props) => {
           onClick={handleLogout}>
           Log Out
       </button>}
-
       </Menu>
     </nav>
   </div>
