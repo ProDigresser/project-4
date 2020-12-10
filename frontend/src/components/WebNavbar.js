@@ -38,6 +38,9 @@ const WebNavbar = (props) => {
         <li>
           {localStorage.getItem('token') && <Link className="navLink" to="/add-video">Add a Video</Link>}
         </li>
+        <li>
+          {localStorage.getItem('token') && <Link className="navLink" to="/users">Users</Link>}
+        </li>
         <li className="navLogout">
           {localStorage.getItem('token') && <button
             onClick={handleLogout}>
@@ -46,9 +49,11 @@ const WebNavbar = (props) => {
         </li>
       </ul>
     </nav>
-    <p>
-      {localStorage.getItem('token') && <span>Welcome back <Link to={`/users/${userId}`}>{userName}</Link></span>}
+    <div className="welcomeWrapper">
+    <p className="welcomeBack">
+      {localStorage.getItem('token') && <span>Welcome back <Link className="welcomeBackName" to={`/users/${userId}`}>{userName}</Link></span>}
     </p>
+    </div>
   </div>
 }
 

@@ -25,20 +25,25 @@ const UserProfile = (props) => {
 
   }, [])
 
-  console.log(videos)
-  console.log(user)
 
   function filterVideos() {
 
-    const filteredVideos = videos.filter(video => {
+    // const filteredVideos = videos.filter(video => {
       
-      return video.genres.find(o => o.name === user.genres[0].name)
-       || video.genres.find(o => o.name === user.genres[1].name)
-       || video.genres.find(o => o.name === user.genres[2].name)
-    })
+    //   return video.genres.find(o => o.name === user.genres[0].name)
+    //    || video.genres.find(o => o.name === user.genres[1].name)
+    //    || video.genres.find(o => o.name === user.genres[2].name)
+    // })
 
-    console.log
-    return filteredVideos
+    // console.log
+    // return filteredVideos
+  
+    const userGenres = user.genres.map(({ name }) => name)
+  
+    return videos.filter(video => (
+      video.genres.some(({ name }) => userGenres.includes(name))
+    ))
+  
   }
 
 
@@ -57,9 +62,7 @@ const UserProfile = (props) => {
   }
 
   return <main className="profileMain">
-    {isCreator(user.id) && <div>
-      <Link to={`/edit-user/${userId}`}>Edit Profile</Link>
-    </div>}
+
     <h1>{user.username}</h1>
     <div className="bio">
       <div className="bioContainer">
@@ -73,6 +76,10 @@ const UserProfile = (props) => {
         </div>
       </div>
     </div>
+    {isCreator(user.id) && <div className="editContainer">
+      <Link className="editProfile" to={`/edit-user/${userId}`}>Edit Profile</Link>
+    </div>}
+
     <div className="headerVids">
       <h2>{user.username}'s videos</h2>
       <div className="userVideos">

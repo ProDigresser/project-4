@@ -22,11 +22,13 @@ const MobileNavbar = (props) => {
 
 
   return <div className="mobileNavbar">
-  
+
     <nav>
-    <img src={HowTo} height={150} alt="logo"/>
-      <Menu width={ 180 }>
+      <img src={HowTo} height={150} alt="logo" />
+      <Menu width={180}>
         {token && <Link className="menu-item" to="/add-video">Add a Video</Link>}
+
+        {token && <Link className="menu-item" to="/users">Users</Link>}
 
         <Link className="menu-item" to="/">Videos</Link>
 
@@ -37,7 +39,7 @@ const MobileNavbar = (props) => {
         {token && <button className="menu-item"
           onClick={handleLogout}>
           Log Out
-      </button>}
+        </button>}
       </Menu>
     </nav>
   </div>
