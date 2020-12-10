@@ -14,7 +14,7 @@ module.exports = () => {
     output: {
       filename: 'bundle.js',
       path: path.resolve('backend/dist'),
-      publicPath: '/',
+      publicPath: '/'
     },
     devtool: 'source-map',
     module: {

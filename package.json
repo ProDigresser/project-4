@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "serve:frontend": "webpack-dev-server --mode=development",
-    "serve:backend": "pipenv run flask run"
+    "serve:backend": "pipenv run flask run",
+    "webpack": "webpack -p",
+    "build": "pipenv install; npm i; webpack -p",
+    "serve:react": "webpack-dev-server",
+    "serve:flask": "pipenv run flask run"
   },
   "author": "",
   "license": "ISC",
