@@ -28,9 +28,10 @@ const Home = () => {
   // Loading screen
 
   if (!videos[1]) {
-    return <div>
+    return <div className="loaderWrapper">
       <h2>Loading...</h2>
-      <progress  max='100'>60%</progress>
+    <div className="loader">
+      </div>
     </div>
   }
 

@@ -26,7 +26,7 @@ const UserProfile = (props) => {
   function filterVideos() {
 
     // const filteredVideos = videos.filter(video => {
-      
+
     //   return video.genres.find(o => o.name === user.genres[0].name)
     //    || video.genres.find(o => o.name === user.genres[1].name)
     //    || video.genres.find(o => o.name === user.genres[2].name)
@@ -34,27 +34,30 @@ const UserProfile = (props) => {
 
     // console.log
     // return filteredVideos
-  
+
     const userGenres = user.genres.map(({ name }) => name)
-  
+
     return videos.filter(video => (
       video.genres.some(({ name }) => userGenres.includes(name))
     ))
-  
+
   }
 
 
 
   if (!user.genres) {
-    return <div>
+    return  <div className="loaderWrapper">
       <h2>Loading...</h2>
+      <div className="loader">
+      </div>
     </div>
   }
 
   if (!videos[1]) {
-    return <div>
+    return <div className="loaderWrapper">
       <h2>Loading...</h2>
-      <progress max='100'>60%</progress>
+      <div className="loader">
+      </div>
     </div>
   }
 
