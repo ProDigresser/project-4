@@ -365,7 +365,7 @@ nav {
     color: var(--light);
   }
   .follow-button {
-    border: 4px var(--grey) solid;
+    border: 2px var(--light) solid;
     border-radius: 8px;
     background: var(--grey);
     width: 170px;
@@ -375,7 +375,9 @@ nav {
     outline: none;
   }
   .follow-button.button-is-active {
-    border: 4px var(--extraLight) solid;
+    border: 2px var(--extraLight) solid;
+    background-color: var(--mid);
+    color: var(--grey);
   }
 
   

@@ -54,9 +54,9 @@ const Users = (props) => {
       }
       const newData = [...userData]
       newData.splice(index, 1, newUser)
-      console.log(newData)
+
       const update = () => updateUserData(newData)
-      update(newData)
+      update()
 
       const newFollow = { following: [{ id: user.id }, ...currentUser] }
 
@@ -78,12 +78,14 @@ const Users = (props) => {
       const newData = [...userData]
       newData.splice(index, 1, newUser)
       const update = () => updateUserData(newData)
-      update(newData)
+      update()
 
       const removeFollow = currentUser.find(user => user.id === Number(e.target.value))
-      const index = currentUser.indexOf(removeFollow)
+      const i = currentUser.indexOf(removeFollow)
+
+
       
-      currentUser.splice(index, 1)
+      currentUser.splice(i, 1)
 
       const putObj = { following: currentUser }
 
@@ -99,14 +101,15 @@ const Users = (props) => {
   return <main className="usersMain">
     <div className="userCard">
       {userData && userData.map(user => {
-
+        
         if (currentUser !== undefined) {
           const findFollow = currentUser.find(follower => follower.id === user.id)
           if (findFollow !== undefined) {
             user.isActive = 'button-is-active'
+          } else {
+            user.isActive = ''
           }
         }
-
 
         return <div className="userName" key={user.username}>
           <img src={logo} height={50} />
@@ -125,7 +128,7 @@ const Users = (props) => {
             })}
           </h3>
           <button className={`follow-button ${user.isActive}`} value={user.id} onClick={handleFollow}>
-            <span>{user.isActive === '' ? 'Follow!' : 'Following!'}</span>
+            <span>{user.isActive === '' ? 'Follow' : 'Following'}</span>
             
             
           </button>
