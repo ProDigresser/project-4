@@ -57,6 +57,7 @@ const WebNavbar = (props) => {
         <span>Welcome back <Link className="welcomeBackName" to={`/users/${userId}`}>{userName}</Link></span>
       </p>
     </div>}
+    
   </div>
 }
 
