@@ -17,6 +17,7 @@ import Footer from './src/components/Footer'
 import './src/styles/styles.scss'
 import UserProfile from './src/components/UserProfile'
 
+
 const App = () => (
   <BrowserRouter>
     <WebNavbar className="webNavbar" />
