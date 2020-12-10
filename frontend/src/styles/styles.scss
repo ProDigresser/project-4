@@ -381,7 +381,8 @@ nav {
     border: 2px var(--light) solid;
     border-radius: 8px;
     background: var(--grey);
-    width: 170px;
+    min-width: 40%;
+    max-width: 60%;
     height:40px;
   }
   .follow-button:focus {
