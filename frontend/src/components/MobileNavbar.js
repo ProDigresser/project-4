@@ -32,6 +32,8 @@ const MobileNavbar = (props) => {
 
         <Link className="menu-item" to="/">Videos</Link>
 
+        {token && <Link className="menu-item" to={`/users/${userId}`}>My Profile</Link>}
+
         {!token && <Link className="menu-item" to="/login">Log In</Link>}
 
         {!token && <Link className="menu-item" to="/signup">Sign Up</Link>}
