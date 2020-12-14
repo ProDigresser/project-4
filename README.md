@@ -20,7 +20,7 @@
 
 This project was a Group Programming task - set as part of the Software Engineering Immersive Course from General Assembly.
 
-This task involved working together to develop a Full Stack application using the core technologies of - PostgreSQL, Python, Flask and React. This Project took place over 6 working days.
+This task involved working together to develop a Full Stack application using the core technologies of - PostgreSQL, Python, Flask and React. This Project took place over 6 working days. Whilst we are all familiar with React and JavaScript - SQL databases and Python & Flask are new technologies to us - so this was both a practicing and learning experience. 
 
 When consulting as part of a team, it was decided to design an app to do with learning. What we came up with was a streaming platform app that allowed users to post Videos and comments, follow other users and view videos based on personal interests.
 
@@ -258,7 +258,47 @@ The above piece of logic has been hard coded - to improve this i would map out e
 
 ### Styling & SASS
 
-The look and feel of the site
+The look and feel of the site was key to a good user experience during early development we set out to develop a style guide in the form of fonts, color schemes, site layout and logos. This included developing a visual language that would be consistent across the site - buttons, forms and video windows styled in a clean and easy to use way.
+
+Custom variables played a helpful role in keeping the visuals the same, here is an example of the variables being set at the top of the scss document -
+```scss
+:root{
+  --background: #eeeeee;
+  --dark: #0B0C10;
+  --mid: #1F2833;
+  --light: #45A29E;
+  --extraLight: #66FCF1;
+  --grey: #C5C6C7;
+  --font: 'PT Sans', sans-serif;
+}
+```
+Here we have an example of the scss using these variables and keyframe animation -
+```scss
+.loader {
+  border: 16px solid var(--mid); /* Light grey */
+  border-top: 16px solid var(--extraLight); /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+```
+
+Here is an example of the registration and user pages to show the clean layout and design -
+
+Registration page - 
+![mobile_registration](README_files/register_page.png)
+
+User page -
+![mobile_registration](README_files/user_page.png)
+
 
 ## The Result!
 
+
+![home_page](README_files/project-4-screenshot.png)
