@@ -43,7 +43,7 @@ Find it here! --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 - PostgreSQL
 - Python & Flask
 - Marshmallow & SQLalchemy 
-- React & Javascript
+- React & JavaScript
 - Git & GitHub
 - Heroku 
 
@@ -89,7 +89,7 @@ class BaseModel:
     db.session.commit()
 ```
 
-Here is an example of code that i am proud of - this is a segment of the User Model that involves a many to many relationship with other users - 
+Here is an example of code thatIam proud of - this is a segment of the User Model that involves a many to many relationship with other users - 
 
 ```python 
 class User(db.Model, BaseModel):
@@ -254,7 +254,7 @@ Here we have the example of updating the users interests on the Create and Edit 
 
   }
 ```
-The above piece of logic has been hard coded - to improve this i would map out each genre programmatically (in DRY fashion).
+The above piece of logic has been hard coded - to improve thisIwould map out each genre programmatically (in DRY fashion).
 
 ### Styling & SASS
 
@@ -291,14 +291,23 @@ Here we have an example of the scss using these variables and keyframe animation
 
 Here is an example of the registration and user pages to show the clean layout and design -
 
-Registration page - 
-![mobile_registration](README_files/register_page.png)
-
-User page -
-![mobile_registration](README_files/user_page.png)
+![mobile_screenshot](README_files/mobile_screenshot.png)
 
 
 ## The Result!
 
+This was an interesting learning experience - getting to grips with a couple of new technologies, linking a Python backend to a React frontend and innovating on the code that we had been previously been taught. The site looks great, functions as designed and is easy to use. Personally, I am very happy with the result of the site and its features.
+
+Working in team came to be an easy and smooth process - with the use of Git and Github, well defined roles and individual feature development, with very few difficulties in resolving version conflicts. As a team, we shared the roles well - developing the core features of the backend before dividing and coding independently. 
+
+### Future Improvements
+
+For the future there are a few features thatIwould like to take the time to complete -
+- Add video upload functionality
+- Add Like functionality
+- Icons and avatars/thumbnails
+- Complete the 'Edit Video' feature
+
+Link --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 
 ![home_page](README_files/project-4-screenshot.png)
