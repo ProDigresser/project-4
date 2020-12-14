@@ -54,15 +54,15 @@ In order to work as a team and develop coherently - we took time looking at the 
 1. Develop an understanding of what our user story would look like
 2. Design the database backend, including relationship diagrams 
 3. Develop the core backend features as a group and get a clear understanding of the backend structure before diving in further
-4. Gather the external APIs we would be using and initiate them on the back end 
+4. Gather the external APIs we would be using and initiate them on the backend 
 5. Attach the backend endpoints to the front end using React
 6. Form a style guide - including a wireframe, colour pallette and logo 
 
 ### Design & SQL Relationships
 
 Most of our first day was spent looking at what features we wanted to include in our app. I think that our vision for this app and how we saw people interacting with it informed what endpoints we wanted on our Database - which in turn allowed us to create a comprehensive relationship diagram. Getting a clear idea of the Database was key to a smooth development process down the line.
-<!-- !relationship diagram here -->
-<!-- \![]()  -->
+
+![Relationship Diagram](README_files/relationship_diagram.png) 
 
 As for the user stroy we found that two pieces of design were important - firstly the ability to easily post videos, add comments and the ability to reply to comments. And secondly the ability to connect - or follow - other users in order to provide a user with a list of videos based on their interests and who they follow.
 
@@ -185,9 +185,80 @@ class PopulateUserSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
 
 ### The Front End & React
 
+With the backend roughed out and major endpoints ready to be used it was time for some of the team to start developing the frontend in React. Considering how powerful SQL databases can be - it was a good idea to start developing the front end before completing the backend as to tailor exactly what we wanted to be served to the front end. Our high level development of the frontend happened early on in the project along - to get a grasp of how the features hung together. We were all in agreement that developing mobile first functionality was important in regards to the user experience and the target audience we had in mind. Here we have some early wire-framing of the site layout -
 
+![site wireframe](README_files/wireframe.png)
+
+Even with a robust backend in place - we still wanted to manipulate and display the data we had in interesting ways, with a focus on interactivity with the content of the site. Some of the core features that needed this were the Users page - where you could navigate to other users pages and follow other users; video and user creation - where you could set genres or interests; and filtering multiple genres from multiple videos to get a unique list of videos.
+
+In this example when the follow button is clicked and the button is inactive - a new user object is created, the old user object is replaced with a splice and the userData array is updated with a function. Finally the follow is sent off the the backend with an Axios PUT to update the account of the current user - 
+
+```javascript
+if (user.isActive === '') {
+  const newUser = {
+    id: user.id,
+    username: user.username,
+    genres: user.genres,
+    isActive: 'button-is-active'
+  }
+  const newData = [...usersData]
+  newData.splice(index, 1, newUser)
+
+  const update = () => updateUsersData(newData)
+  update()
+
+  const newFollow = { following: [{ id: user.id }, ...currentUser] }
+
+  axios.put('/api/follow', newFollow, {
+    headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(resp => {
+      updateUser(resp.data.following)
+    })
+} 
+```
+
+Here we have the example of updating the users interests on the Create and Edit User pages - where when a genre button is clicked it checks the value sets the id for a function and updates the state of the button. It then calls a function to check if the genre selected exists in the genre form data - and adds or removes depending on the result. The form data object is then updated with the new genre array -
+
+```javascript
+  let id = null
+  const array = formData.genres
+ 
+    // An Entry for each Genre
+  if (e.target.value === 'Lifestyle') {
+    id = 12
+    if (lifeClass === '') {
+      lifeUpdate('genre-button-active')
+    } else {
+      lifeUpdate('')
+    }
+  }
+    // ...
+  addOrRemove(array, id)
+
+  function addOrRemove(array, id) {
+    const obj = { id: id }
+    var index = array.findIndex(x => x.id === id)
+    if (index === -1) {
+      array.push( obj )
+    } else {
+      array.splice(index, 1)
+    }
+
+    const data = {
+      ...formData,
+      genres: array
+    }
+
+    updateFormData(data)
+
+  }
+```
+The above piece of logic has been hard coded - to improve this i would map out each genre programmatically (in DRY fashion).
 
 ### Styling & SASS
+
+The look and feel of the site
 
 ## The Result!
 
