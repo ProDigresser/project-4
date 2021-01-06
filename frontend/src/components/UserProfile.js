@@ -109,7 +109,7 @@ const UserProfile = (props) => {
         })}
       </div>
       <div className="headerVids">
-        <h2>Videos fromm people you follow</h2>
+        <h2>Videos from people you follow</h2>
         <div className="userVideos">
           {user.following.map((user) => {
             return user.videos.map(video => {

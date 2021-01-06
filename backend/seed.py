@@ -103,8 +103,8 @@ with app.app_context():
     genres=[photography, film_and_video])
 
   dec_vid_2 = Video(
-    title='Choose Your Lense',
-    description='A deep dive into the best lense for the job.',
+    title='Choose Your Lens',
+    description='A deep dive into the best lens for the job.',
     vid_url='https://youtu.be/BE6H5C-g6JA',
     user=dec,
     genres=[photography, film_and_video])
@@ -132,7 +132,7 @@ with app.app_context():
 
   mark_vid_1 = Video(
     title='Learn To Paint Like Bob Ross',
-    description='Definitave guide to painting like painting like Bob Ross.',
+    description='Definitive guide to painting like painting like Bob Ross.',
     vid_url='https://youtu.be/mYAmSXpeFjM',
     user=mark,
     genres=[art_illustration])
