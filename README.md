@@ -254,7 +254,7 @@ Here we have the example of updating the users interests on the Create and Edit 
 
   }
 ```
-The above piece of logic has been hard coded - to improve thisIwould map out each genre programmatically (in DRY fashion).
+The above piece of logic has been hard coded - to improve this I would map out each genre programmatically (in DRY fashion).
 
 ### Styling & SASS
 
@@ -302,7 +302,7 @@ Working in team came to be an easy and smooth process - with the use of Git and 
 
 ### Future Improvements
 
-For the future there are a few features thatIwould like to take the time to complete -
+For the future there are a few features that I would like to take the time to complete -
 - Add video upload functionality
 - Add Like functionality
 - Icons and avatars/thumbnails
