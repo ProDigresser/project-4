@@ -3,6 +3,7 @@
 ### General Assembly Software Engineering Immersive
 
 # Project-4 - PostgreSQL, Python, Flask & React Full Stack Application - HowToTube, A Video Platform for Personal Development!
+### By [Sherryll ](https://github.com/Selliott456)  and Co-Contributors- [Laurence](https://github.com/ProDigresser) & [Dec ](https://github.com/dec1992). 
  
 
          /__/\         /  /\         /__/\                 ___        /  /\    
@@ -312,7 +313,3 @@ Link --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 
 ![home_page](README_files/project-4-screenshot.png)
 
-### Contributors
-
-- Sherryll Elliott
-- Laurence Walshe
