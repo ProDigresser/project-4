@@ -315,4 +315,4 @@ Link --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 ### Contributors
 
 - Sherryll Elliott
-- Laurence Walshed
+- Laurence Walshe
