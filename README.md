@@ -311,5 +311,5 @@ For the future there are a few features that I would like to take the time to co
 
 Link --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 
-![home_page](README_files/project-4-screenshot.png)
+![home_page](README_files/project-4-screenshot.png) 
 
