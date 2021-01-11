@@ -295,11 +295,16 @@ Here is an example of the registration and user pages to show the clean layout a
 ![mobile_screenshot](README_files/mobile_screenshot.png)
 
 
-## The Result!
+## The Result & Key Experiences!
 
-This was an interesting learning experience - getting to grips with a couple of new technologies, linking a Python backend to a React frontend and innovating on the code that we had been previously been taught. The site looks great, functions as designed and is easy to use. Personally, I am very happy with the result of the site and its features.
+This was somewhat tough learning experience - getting to grips with a new stack of technologies, linking a Python backend to a React frontend and innovating on the code that we had been previously been taught. The site looks great, functions as designed and is easy to use. Personally, I am very happy with the result of the site and its features.
 
 Working in team came to be an easy and smooth process - with the use of Git and Github, well defined roles and individual feature development, with very few difficulties in resolving version conflicts. As a team, we shared the roles well - developing the core features of the backend before dividing and coding independently. 
+
+Key details I would like to highlight include - 
+- Thoughtful design of the SQL database
+- Careful design of the Models and Schema, with awareness of circular imports
+- Developing understanding when it comes to over-engineering a feature
 
 ### Future Improvements
 
