@@ -50,7 +50,7 @@ Find it here! --> [HowToTube 🤖](https://howtotube.herokuapp.com/)
 
 ## The App
 
-In order to work as a team and develop coherently - we took time looking at the different faucets that we thought were key to this app, and worked though the development process methodically. We took extra care with designing our Database with regards to the relationships between tables. These are the steps we had identified-
+In order to work as a team and develop coherently - we took time looking at the different components that we thought were key to this app, and worked though the development process methodically. We took extra care with designing our Database with regards to the relationships between tables. These are the steps we had identified-
 
 1. Develop an understanding of what our user story would look like
 2. Design the database backend, including relationship diagrams 
