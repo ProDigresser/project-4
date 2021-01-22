@@ -11,6 +11,7 @@ marshmallow-sqlalchemy = "*"
 flask-bcrypt = "*"
 pyjwt = "*"
 psycopg2-binary = "*"
+bcrypt = "*"
 
 [dev-packages]
 pylint = "*"
